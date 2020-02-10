@@ -4,20 +4,21 @@
   "description": "OSF Academy front-end project",
   "main": "index.js",
   "scripts": {
-    "start": "node node_modules/static-server/bin/static-server.js src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "sass --no-source-map src/css/style.scss:src/css/style.css",
+    "start": "static-server src",
+    "dev": "watch \"npm run build\" src"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nekoi275/osf-project.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Nekoi275/osf-project/issues"
-  },
   "homepage": "https://github.com/Nekoi275/osf-project#readme",
   "devDependencies": {
-    "static-server": "^2.2.1"
+    "sass": "^1.25.0",
+    "static-server": "^2.2.1",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1"
   }
 }
