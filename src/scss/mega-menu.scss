@@ -1,0 +1,29 @@
+@use "variables" as *;
+
+.mega-menu {
+    background-color: $base-color;
+    color: #ffffff;
+    box-sizing: border-box;
+    padding: 55px 0px 55px 0px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 75px;
+    display: none;
+    &.active {
+        display: block;
+    }
+
+    h2 {
+        font-size: 14px;
+        font-weight: 500;
+        padding-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    li, a {
+        color: #ffffff;
+        padding-bottom: 15px;
+    }
+}
+

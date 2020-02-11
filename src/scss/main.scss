@@ -9,25 +9,15 @@ table, tbody, tfoot, thead, tr, th, td {
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
     background: transparent;
 }
 body {
-    line-height: 1;
     font-family: "Lato";
     font-size: 14px;
+    line-height: 1;
 }
 ol, ul {
     list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: "";
-    content: none;
 }
 
 a {
@@ -38,7 +28,11 @@ a {
 .wrapper {
     margin-right: auto;
     margin-left:  auto;
-    max-width: 1260px;
+    max-width: 1160px;
     padding-right: 10px;
     padding-left: 10px;
+}
+
+.bottom {
+    align-items: flex-end;
 }
