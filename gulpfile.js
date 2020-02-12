@@ -15,8 +15,8 @@ let sassTask = function () {
         .pipe(gulp.dest(path.resolve(output, 'css')));
 };
 let copyWebfonts = function () {
-    return gulp.src('node_modules/\@fortawesome/fontawesome-free/webfonts/')
-        .pipe(gulp.dest(output));
+    return gulp.src('node_modules/\@fortawesome/fontawesome-free/webfonts/*')
+        .pipe(gulp.dest(path.resolve(output, 'webfonts')));
 };
 let copyHTML = function () {
     return gulp.src('src/index.html').pipe(gulp.dest(output));

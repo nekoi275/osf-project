@@ -62,15 +62,11 @@ nav {
 .icons-menu {
     display: inline-block;
     position: relative;
+
     .fas, .far {
-        font-size: 20px;
-        color: $light-font-color;
         margin-left: 35px;
-        cursor: pointer;
-        &:hover {
-            color: $base-color;
-        }
     }
+
     .count {
         position: absolute;
         background-color: #ffffff;
@@ -90,11 +86,4 @@ nav {
     .count.products {
         left: 220px;
     }
-}
-
-.arrow::after {
-    content: "▼";
-    color: $light-font-color;
-    font-size: 10px;
-    margin-left: 15px;
 }
