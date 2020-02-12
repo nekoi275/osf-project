@@ -6,16 +6,20 @@ const clean = require('gulp-clean');
 
 sass.compiler = require('sass');
 
-let cleanTask = function() {
-    return gulp.src(output, {read: false}).pipe(clean());
+let cleanTask = function () {
+    return gulp.src(output, { read: false }).pipe(clean());
 };
 let sassTask = function () {
     return gulp.src('./src/scss/style.scss')
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(gulp.dest(path.resolve(output, 'css')));
 };
-let copyWebfonts = function () {
+let copyFontAwesome = function () {
     return gulp.src('node_modules/\@fortawesome/fontawesome-free/webfonts/*')
+        .pipe(gulp.dest(path.resolve(output, 'webfonts')));
+};
+let copyFontLato = function () {
+    return gulp.src('node_modules/\@openfonts/lato_latin/files/*')
         .pipe(gulp.dest(path.resolve(output, 'webfonts')));
 };
 let copyHTML = function () {
@@ -24,6 +28,7 @@ let copyHTML = function () {
 let copyImg = function () {
     return gulp.src('src/img/*').pipe(gulp.dest(path.resolve(output, 'img')));
 };
+let copyWebfonts = gulp.parallel(copyFontAwesome, copyFontLato);
 let copyAll = gulp.series(copyWebfonts, copyHTML, copyImg);
 let build = gulp.parallel(sassTask, copyAll);
 gulp.task('clean', cleanTask);
