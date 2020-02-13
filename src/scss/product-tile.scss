@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+.product-tile {
+  background-color: #ffffff;
+  width: 270px;
+  border: none;
+  text-align: center;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  .product-tile-desc {
+    font-size: 16px;
+    line-height: 18px;
+    padding: 18px;
+  }
+}
