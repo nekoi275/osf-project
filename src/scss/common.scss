@@ -1,83 +1,114 @@
 @use "variables" as *;
 
-html, body, div, span, 
-h1, h2, h3, h4, h5, h6, p, blockquote, 
-a, address, img, ol, ul, li,
-fieldset, form, label, legend,
-table, tbody, tfoot, thead, tr, th, td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    background: transparent;
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+a,
+address,
+img,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
 }
 body {
-    font-family: "Lato";
-    font-size: 14px;
-    line-height: 1;
+  font-family: "Lato";
+  font-size: 14px;
+  line-height: 1;
 }
-ol, ul {
-    list-style: none;
+ol,
+ul {
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: $dark-font-color;
+  text-decoration: none;
+  color: $dark-font-color;
 }
 
 button {
-    background-color: transparent;
-    padding: 9px 0px 13px 0px;
-    border-radius: 30px;
-    text-transform: uppercase;
-    box-sizing: border-box;
-    cursor: pointer;
-    line-height: 1;
+  background-color: transparent;
+  padding: 9px 0px 13px 0px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  cursor: pointer;
+  line-height: 1;
 }
 
 .wrapper {
-    margin-right: auto;
-    margin-left:  auto;
-    max-width: 1160px;
-    padding-right: 10px;
-    padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1150px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .bottom {
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
-.fas, .far, .fab {
-    font-size: 20px;
-    color: $light-font-color;
-    cursor: pointer;
-    &:hover {
-        color: $base-color;
-    }
+.fas,
+.far,
+.fab {
+  font-size: 20px;
+  color: $light-font-color;
+  cursor: pointer;
+  &:hover {
+    color: $base-color;
+  }
 }
 
 .arrow::after {
-    content: "▼";
-    color: $light-font-color;
-    font-size: 10px;
-    margin-left: 15px;
+  content: "▼";
+  color: $light-font-color;
+  font-size: 10px;
+  margin-left: 15px;
 }
 
 h2 {
-    font-size: 14px;
-    font-weight: 900;
-    margin-bottom: 30px;
-    text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-transform: uppercase;
 }
 
 h3 {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 900;
-    text-transform: capitalize;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+h6 {
+  font-size: 48px;
+  font-weight: 900;
+  text-transform: capitalize;
 }
 
 .col {
-    padding: 0px;
+  padding: 0px;
 }
-
