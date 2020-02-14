@@ -61,4 +61,16 @@
       display: block;
     }
   }
+
+  .product-tile-button {
+    border: 1px solid $light-font-color;
+    padding: 12px;
+    span {
+      padding: 11px;
+    }
+    .product-tile-button-price {
+      color: #23c46e;
+      border-right: 1px solid $light-font-color;
+    }
+  }
 }
