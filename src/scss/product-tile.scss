@@ -4,26 +4,20 @@
   background-color: #ffffff;
   position: relative;
   width: 271px;
+  height: 366px;
   border: none;
   text-align: center;
-  padding-bottom: 20px;
   border-radius: 5px;
+  font-size: 16px;
 
   .product-tile-desc {
-    font-size: 16px;
     line-height: 18px;
-    padding: 18px;
+    padding: 11px;
   }
   .product-tile-hover {
+    @include overlay;
     display: none;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
     background-image: linear-gradient(to top, #1cc167 0%, #2ed3a2 100%);
-    opacity: 0.9;
-    border-radius: 5px;
   }
   .product-tile-hover-button {
     display: none;
@@ -65,6 +59,7 @@
   .product-tile-button {
     border: 1px solid $light-font-color;
     padding: 12px;
+    margin-bottom: 18px;
     span {
       padding: 11px;
     }
@@ -72,5 +67,35 @@
       color: #23c46e;
       border-right: 1px solid $light-font-color;
     }
+  }
+  .product-tile-overlay {
+    @include overlay;
+    background-image: linear-gradient(to top, #675b99 0%, #dc5987 100%);
+  }
+
+  .product-tile-overlay-text {
+    position: absolute;
+    color: #ffffff;
+    text-align: left;
+    line-height: 24px;
+    top: 220px;
+    left: 30px;
+    right: 100px;
+  }
+
+  .fas.fa-user {
+    font-size: 20px;
+    color: $details-color;
+    position: absolute;
+    top: 313px;
+    left: 30px;
+  }
+
+  .product-tile-time {
+    position: absolute;
+    top: 317px;
+    left: 65px;
+    text-transform: uppercase;
+    color: #ffffff;
   }
 }
