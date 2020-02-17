@@ -1,15 +1,15 @@
 import $ from 'jquery';
 import slick from 'slick-carousel';
- 
+
 global.jQuery = $;
 global.$ = $;
 global.slick = slick;
 
-$(document).ready(function(){
-    $('.your-class').slick({
+$(document).ready(function () {
+    $('#top-slider-container').slick({
+        dots: true,
+        appendDots: $('#top-slider-container'),
         infinite: true,
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        autoplay: true
-      });
+        arrows: false
+    });
 });

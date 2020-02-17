@@ -50,16 +50,6 @@ a {
   color: $dark-font-color;
 }
 
-button {
-  background-color: transparent;
-  padding: 9px 0px 13px 0px;
-  border-radius: 30px;
-  text-transform: uppercase;
-  box-sizing: border-box;
-  cursor: pointer;
-  line-height: 1;
-}
-
 .wrapper {
   margin-right: auto;
   margin-left: auto;
@@ -117,4 +107,16 @@ h6 {
 
 .col {
   padding: 0px;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.center-align {
+  text-align: center;
 }

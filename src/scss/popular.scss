@@ -26,9 +26,11 @@ h3 {
 }
 
 #load-more-button {
+  @include button;
   color: #fff;
   padding-left: 90px;
   padding-right: 90px;
+  padding-top: 8px;
   border: 1px solid #fff;
   &::after {
     content: "\21bb";

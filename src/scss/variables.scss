@@ -13,3 +13,13 @@ $light-font-color: #b7b5b4;
     opacity: 0.9;
     border-radius: 5px;
 }
+
+@mixin button {
+    background-color: transparent;
+    padding: 13px 0px 13px 0px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: 1;
+  }

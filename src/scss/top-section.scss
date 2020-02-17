@@ -1,0 +1,60 @@
+@use "variables" as *;
+
+#top {
+  padding: 27px 0px 27px 0px;
+  box-sizing: border-box;
+}
+
+#top-slider-container {
+  width: 870px;
+  position: relative;
+  .top-slider-slide {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 60px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    position: relative;
+    h6 {
+      text-transform: none;
+      margin-bottom: 115px;
+    }
+    .view-more-button {
+      @include button;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      padding-left: 33px;
+      padding-right: 33px;
+      margin: 48px 0px 48px 0px;
+    }
+  }
+  .slick-dots {
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0px;
+}
+
+.slick-dots li.slick-active button::before {
+  background-color: transparent;
+  border: 3px solid #ffffff;
+  color: transparent;
+  border-radius: 100px;
+  opacity: 1;
+  width: 5px;
+  height: 5px;
+  top: 4px;
+  left: 5px;
+}
+
+.slick-dots li button::before {
+  color: #ffffff;
+}
+  
+

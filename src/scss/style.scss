@@ -1,11 +1,11 @@
 @use "fonts";
+@use "common";
 @use "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/main";
 @use "../../node_modules/slick-carousel/slick/slick";
 @use "../../node_modules/slick-carousel/slick/slick-theme" with (
     $slick-font-path: "/webfonts/",
     $slick-loader-path: "/img/"
 );
-@use "common";
 @use "header";
 @use "mega-menu";
 @use "footer";
@@ -13,3 +13,4 @@
 @use "popular";
 @use "banner";
 @use "benefits";
+@use "top-section";
