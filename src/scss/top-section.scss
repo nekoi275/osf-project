@@ -3,6 +3,13 @@
 #top {
   padding: 27px 0px 27px 0px;
   box-sizing: border-box;
+  color: $dark-font-color;
+  h1 {
+    font-size: 18px;
+    padding: 40px 0px 15px 0px;
+    font-weight: 400;
+    text-transform: none;
+  }
 }
 
 #top-slider-container {
@@ -19,6 +26,7 @@
     box-sizing: border-box;
     position: relative;
     border-radius: 5px;
+    height: 505px;
     h6 {
       text-transform: none;
       margin-bottom: 115px;
@@ -59,22 +67,18 @@
   color: #ffffff;
 }
   
-.top-section-sale-block {
+.top-sale-block {
   background-color: $details-color;
-  padding: 70px 35px 70px 35px;
+  padding: 66px 35px 66px 35px;
   width: 270px;
   color: #ffffff;
   position: relative;
   border-radius: 5px;
   text-align: center;
-  margin-left: 30px;
   box-sizing: border-box;
-  .col {
-    padding: 0px;
-  }
   h6 {
     font-size: 100px;
-    margin-bottom: 75px;
+    padding-bottom: 73px;
   }
   h5 {
     font-size: 24px;
@@ -87,4 +91,18 @@
     bottom: 0px;
     left: 0px;
   }
+}
+
+.facebook-button {
+  @include button;
+  border: 2px solid #3a5b96;
+  padding: 9px 25px 11px 9px;
+  color: #3a5b96;
+  margin-top: 30px;
+  .fab.fa-facebook-f {
+    font-size: 17px;
+    color: #3a5b96;
+    margin-right: 20px;
+    margin-left: 0px;
+  } 
 }

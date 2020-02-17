@@ -1,25 +1,25 @@
 $base-color: #262a32;
 $dark-font-color: #45413e;
-$details-color: #84bc22; 
+$details-color: #84bc22;
 $osf-font-color: #262a32;
 $light-font-color: #b7b5b4;
 
 @mixin overlay {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    opacity: 0.9;
-    border-radius: 5px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  opacity: 0.9;
+  border-radius: 5px;
 }
 
 @mixin button {
-    background-color: transparent;
-    padding: 13px 0px 13px 0px;
-    border-radius: 30px;
-    text-transform: uppercase;
-    box-sizing: border-box;
-    cursor: pointer;
-    line-height: 1;
-  }
+  background-color: transparent;
+  padding: 13px 0px 13px 0px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  cursor: pointer;
+  line-height: 1;
+}
