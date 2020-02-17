@@ -8,6 +8,8 @@
 #top-slider-container {
   width: 870px;
   position: relative;
+  background-color: #31383e;
+  border-radius: 5px;
   .top-slider-slide {
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,8 +17,8 @@
     color: #ffffff;
     padding: 60px;
     box-sizing: border-box;
-    border-radius: 4px;
     position: relative;
+    border-radius: 5px;
     h6 {
       text-transform: none;
       margin-bottom: 115px;
@@ -57,4 +59,32 @@
   color: #ffffff;
 }
   
-
+.top-section-sale-block {
+  background-color: $details-color;
+  padding: 70px 35px 70px 35px;
+  width: 270px;
+  color: #ffffff;
+  position: relative;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 30px;
+  box-sizing: border-box;
+  .col {
+    padding: 0px;
+  }
+  h6 {
+    font-size: 100px;
+    margin-bottom: 75px;
+  }
+  h5 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  img {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+}
