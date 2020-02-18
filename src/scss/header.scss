@@ -1,16 +1,19 @@
 @use "variables" as *;
 
 header {
+  background-color: #ffffff;
   height: 75px;
   border-bottom: 2px solid #e8e2d6;
+  position: fixed;
+  z-index: 200;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding-left: 55px;
-  padding-right: 55px;
+  align-items: center;
+  width: 100%;
 }
 
 .logo {
+  margin-left: 55px;
   width: 147px;
   display: inline-block;
   img {
@@ -37,19 +40,26 @@ header {
 }
 
 nav {
-  display: inline-flex;
-  position: relative;
+  margin-right: 55px;
   ul {
+    display: inline-block;
+    position: relative;
     li {
       display: inline;
-      padding: 10px 10px 30px 10px;
+      padding: 10px 10px 27px 10px;
       box-sizing: border-box;
       margin-left: 15px;
       color: $dark-font-color;
       font-weight: 400;
       text-transform: uppercase;
       cursor: pointer;
+      border-bottom: 3px solid transparent;
       &:hover {
+        background-color: $base-color;
+        color: #ffffff;
+        border-bottom: 3px solid $details-color;
+      }
+      &.active {
         background-color: $base-color;
         color: #ffffff;
         border-bottom: 3px solid $details-color;
@@ -69,7 +79,7 @@ nav {
     position: absolute;
     background-color: #ffffff;
     display: block;
-    top: -6px;
+    top: 23px;
     width: 10px;
     height: 10px;
     text-align: center;
@@ -79,9 +89,9 @@ nav {
     font-size: 9px;
   }
   .count.wishlist {
-    right: 45px;
+    right: 102px;
   }
   .count.products {
-    right: -8px;
+    right: 46px;
   }
 }

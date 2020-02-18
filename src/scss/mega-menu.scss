@@ -1,6 +1,6 @@
 @use "variables" as *;
 
-.mega-menu {
+#mega-menu {
     background-color: $base-color;
     color: #ffffff;
     box-sizing: border-box;
@@ -10,8 +10,10 @@
     right: 0px;
     top: 75px;
     display: none;
+    z-index: 100;
     &.active {
         display: block;
+        position: fixed;
     }
 
     li, a {

@@ -10,6 +10,7 @@ const webpackConfig = {
     output: {
         filename: 'main.js',
     },
+    mode: "development"
 };
 
 let cleanTask = function () {
@@ -37,12 +38,12 @@ let copyImg = function () {
     .pipe(gulp.dest(path.resolve(output, 'img')));
 };
 let buildJS = function () {
-    return gulp.src('src/index.js').pipe(webpack(webpackConfig))
+    return gulp.src('src/js/index.js').pipe(webpack(webpackConfig))
         .pipe(gulp.dest(output));
 };
 let copyAll = gulp.series(copyWebfonts, copyHTML, copyImg);
 let build = gulp.parallel(buildCSS, copyAll, buildJS);
 gulp.task('clean', cleanTask);
-gulp.task('sass', buildCSS);
+gulp.task('build', build);
 gulp.task('copy', copyAll);
 exports.default = gulp.series(cleanTask, build);

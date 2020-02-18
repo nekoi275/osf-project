@@ -1,11 +1,12 @@
 import $ from 'jquery';
 import slick from 'slick-carousel';
+import * as handlers from './handlers';
 
 global.jQuery = $;
 global.$ = $;
 global.slick = slick;
 
-$(document).ready(function () {
+$(document).ready( () => {
     $('#top-slider-container').slick({
         dots: true,
         appendDots: $('#top-slider-container'),
@@ -14,7 +15,7 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
+$(document).ready( () => {
     $('#featured-products-slider').slick({
         dots: false,
         infinite: true,
@@ -26,3 +27,4 @@ $(document).ready(function () {
         draggable: false
     });
 });
+
