@@ -13,6 +13,7 @@
   .product-tile-desc {
     line-height: 18px;
     padding: 11px;
+    box-sizing: border-box;
   }
   .product-tile-hover {
     @include overlay;

@@ -13,3 +13,16 @@ $(document).ready(function () {
         arrows: false
     });
 });
+
+$(document).ready(function () {
+    $('#featured-products-slider').slick({
+        dots: false,
+        infinite: true,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        draggable: false
+    });
+});

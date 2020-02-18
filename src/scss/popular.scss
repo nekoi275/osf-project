@@ -14,7 +14,7 @@ h3 {
   &::after,
   &::before {
     content: "";
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid $light-font-color;
     flex: 1;
   }
   &::after {
