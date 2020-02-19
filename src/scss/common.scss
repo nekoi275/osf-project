@@ -128,3 +128,27 @@ h6 {
 .margin-left-col {
   margin-left: 30px;
 }
+
+.dropdown-small {
+  @include dropdown;
+  width: 100px;
+  ul {
+    li {
+      padding: 15px;
+      cursor: pointer;
+      color: #ffffff;
+      &:hover {
+        background-color: #ffffff;
+        color: $dark-font-color;
+      }
+    }
+  }
+}
+
+#lang-dropdown {
+  right: 360px;
+}
+
+#currency-dropdown {
+  right: 265px;
+}

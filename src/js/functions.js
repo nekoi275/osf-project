@@ -11,6 +11,14 @@ export default {
             $('.dropdown-button').removeClass('active');
             $('.dropdown').removeClass('active');
         }
+    },
+    changeLanguage: (event) => {
+        let activeLang = $(event.target).html();
+        $('.lang[data-toggle="lang-dropdown"]').html(activeLang);
+    },
+    changeCurrency: (event) => {
+        let activeCurrency = $(event.target).html();
+        $('.lang[data-toggle="currency-dropdown"]').html(activeCurrency);
     }
 }
 

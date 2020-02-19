@@ -8,3 +8,9 @@ $('.dropdown-button').click((event) => {
 $(document.body).click((event) => {
     functions.toggleDropDown(event);
 });
+$('#lang-dropdown ul li').click((event) => {
+    functions.changeLanguage(event);
+});
+$('#currency-dropdown ul li').click((event) => {
+    functions.changeCurrency(event);
+});

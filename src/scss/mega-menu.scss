@@ -1,28 +1,17 @@
 @use "variables" as *;
 
 #mega-menu {
-    background-color: $base-color;
+  @include dropdown;
+  box-sizing: border-box;
+  padding: 55px 0px 55px 0px;
+  left: 0px;
+  right: 0px;
+  li,
+  a {
     color: #ffffff;
-    box-sizing: border-box;
-    padding: 55px 0px 55px 0px;
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 75px;
-    display: none;
-    z-index: 100;
-    &.active {
-        display: block;
-        position: fixed;
-    }
-
-    li, a {
-        color: #ffffff;
-        padding-bottom: 15px;
-    }
-
-    h2 {
-        color: $light-font-color;
-    }
+    padding-bottom: 15px;
+  }
+  h2 {
+    color: $light-font-color;
+  }
 }
-
