@@ -114,11 +114,11 @@
             <h4>Sign in</h4>
             <form id="login-form">
                 <label>Email
-                    <input type="email" name="email">
+                    <input type="email" required>
                 </label>
                 <label>Password
                     <a href="#">Forgot password</a>
-                    <input type="password">
+                    <input id="user-pass" title="at least 1 numeric, 1 uppercase, 1 lowercase and 1 special character" type="password" minlength="6" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*]).{6,}" required>
                     <span class="fa fa-fw fa-eye password-show"></span>
                 </label>
                 <button id="login-form-button" type="submit" name="password">Login</button>

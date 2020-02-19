@@ -27,6 +27,13 @@ export default {
         } else {
             $('.modal-container').addClass('active');
         }
+    },
+    togglePass: (passwordField) => {
+        if ($(passwordField).attr('type') === 'password') {
+            $(passwordField).attr('type', 'text');
+        } else {
+            $(passwordField).attr('type', 'password');
+        }
     }
 }
 

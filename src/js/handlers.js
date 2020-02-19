@@ -22,3 +22,6 @@ $(document.body).keydown((event) => {
         $('.modal-container').removeClass('active');
     }
 });
+$('.password-show').click(() => {
+    functions.togglePass('#user-pass');
+});
