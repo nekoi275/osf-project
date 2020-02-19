@@ -6,7 +6,7 @@ global.jQuery = $;
 global.$ = $;
 global.slick = slick;
 
-$(document).ready( () => {
+$(document).ready(() => {
     $('#top-slider-container').slick({
         dots: true,
         appendDots: $('#top-slider-container'),
@@ -15,7 +15,7 @@ $(document).ready( () => {
     });
 });
 
-$(document).ready( () => {
+$(document).ready(() => {
     $('#featured-products-slider').slick({
         dots: false,
         infinite: true,
@@ -28,3 +28,6 @@ $(document).ready( () => {
     });
 });
 
+$(document).ready(() => {
+    $('#copyright-year').html(new Date().getFullYear());
+});
