@@ -29,7 +29,7 @@
                 <li class="lang arrow dropdown-button" data-toggle="currency-dropdown">$ US</li>
             </ul>
             <span class="fas fa-search"></span>
-            <span class="far fa-user"></span>
+            <span class="far fa-user" data-modal="open"></span>
             <span class="far fa-heart"></span>
             <span class="fas fa-shopping-bag"></span>
             <span class="count wishlist">0</span>
@@ -107,6 +107,24 @@
             <li>€ EURO</li>
             <li>$ US</li>
         </ul>
+    </div>
+    <div class="modal-container">
+        <div class="overlay" data-modal="close"></div>
+        <div class="modal">
+            <h4>Sign in</h4>
+            <form id="login-form">
+                <label>Email
+                    <input type="email" name="email">
+                </label>
+                <label>Password
+                    <a href="#">Forgot password</a>
+                    <input type="password">
+                    <span class="fa fa-fw fa-eye password-show"></span>
+                </label>
+                <button id="login-form-button" type="submit" name="password">Login</button>
+            </form>
+            <a href="#">I don't have an account</a>
+        </div>
     </div>
     <main>
         <section id="top">
@@ -262,7 +280,8 @@
                     </div>
                     <div class="col benefits-text-col">
                         <h1>Focus</h1>
-                        <p>Our unwavering focus on superior service delivery and building next generation competencies
+                        <p>Our unwavering focus on superior service delivery and building next generation
+                            competencies
                         </p>
                     </div>
                     <div class="col benefits-icon-col">
@@ -270,7 +289,8 @@
                     </div>
                     <div class="col benefits-text-col">
                         <h1>Method</h1>
-                        <p>A standardized methodology designed to deliver measurable business results and predictable
+                        <p>A standardized methodology designed to deliver measurable business results and
+                            predictable
                             costs
                         </p>
                     </div>

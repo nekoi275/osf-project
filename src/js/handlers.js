@@ -14,3 +14,6 @@ $('#lang-dropdown ul li').click((event) => {
 $('#currency-dropdown ul li').click((event) => {
     functions.changeCurrency(event);
 });
+$('[data-modal]').click((event) => {
+    functions.toggleModal(event);
+});

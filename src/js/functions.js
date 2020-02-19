@@ -19,6 +19,14 @@ export default {
     changeCurrency: (event) => {
         let activeCurrency = $(event.target).html();
         $('.lang[data-toggle="currency-dropdown"]').html(activeCurrency);
+    },
+    toggleModal: (event) => {
+        let action = $(event.target).attr('data-modal');
+        if (action == 'close') {
+            $('.modal-container').removeClass('active');
+        } else {
+            $('.modal-container').addClass('active');
+        }
     }
 }
 
