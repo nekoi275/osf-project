@@ -17,3 +17,8 @@ $('#currency-dropdown ul li').click((event) => {
 $('[data-modal]').click((event) => {
     functions.toggleModal(event);
 });
+$(document.body).keydown((event) => {
+    if (event.key == 'Escape') {
+        $('.modal-container').removeClass('active');
+    }
+});
