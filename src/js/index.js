@@ -1,21 +1,30 @@
 import $ from 'jquery';
 import slick from 'slick-carousel';
-import * as handlers from './handlers';
+import handlers from './handlers';
 
 global.jQuery = $;
 global.$ = $;
 global.slick = slick;
 
-$(document).ready(() => {
+$('head').append('<link rel="stylesheet" href="css/style.css"></link>');
+
+let main = require('../templates/main.ejs');
+let top = require('../templates/top.ejs');
+let banner = require('../templates/banner.ejs');
+let benefits = require('../templates/benefits.ejs');
+let popular = require('../templates/popular.ejs');
+let featured = require('../templates/featured.ejs');
+let homePage = [top(), popular(), banner(), featured(), benefits()].join('');
+
+$(document.body).html(main({ content: homePage, year: new Date().getFullYear() }));
+
+function init() {
     $('#top-slider-container').slick({
         dots: true,
         appendDots: $('#top-slider-container'),
         infinite: true,
         arrows: false
     });
-});
-
-$(document).ready(() => {
     $('#featured-products-slider').slick({
         dots: false,
         infinite: true,
@@ -26,8 +35,7 @@ $(document).ready(() => {
         slidesToScroll: 4,
         draggable: false
     });
-});
+    handlers.initHandlers();
+}
 
-$(document).ready(() => {
-    $('#copyright-year').html(new Date().getFullYear());
-});
+$(document).ready(init);
