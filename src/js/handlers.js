@@ -2,13 +2,20 @@ import $ from 'jquery';
 import functions from './functions';
 
 export default {
-    initHandlers: function() {
+    initHandlers: function () {
         $('.dropdown-button').click((event) => {
-            $(event.target).addClass('active');
-            functions.toggleDropDown(event);
+            functions.toggleMenu(event);
+        });
+        $('.dropdown-button').hover(functions.showMenu, (event) => {
+            let mouseOutElem = $(event.relatedTarget);
+            let isDropdown = (mouseOutElem.parents('.dropdown').length > 0)
+                || (mouseOutElem.hasClass('dropdown'));
+            if (!isDropdown) {
+                functions.hideAllMenu(event)
+            }
         });
         $(document.body).click((event) => {
-            functions.toggleDropDown(event);
+            functions.toggleMenu(event);
         });
         $('#lang-dropdown ul li').click((event) => {
             functions.changeLanguage(event);
