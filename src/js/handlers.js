@@ -6,26 +6,20 @@ export default {
         $('.dropdown-button').click((event) => {
             functions.toggleMenu(event);
         });
-        $('.dropdown-button').hover(functions.showMenu, (event) => {
+        $('.dropdown-button,.dropdown').hover(functions.showMenu, (event) => {
             let mouseOutElem = $(event.relatedTarget);
             let isDropdown = (mouseOutElem.parents('.dropdown').length > 0)
                 || (mouseOutElem.hasClass('dropdown'));
             if (!isDropdown) {
-                functions.hideAllMenu(event)
+                functions.hideAllMenu(event);
             }
         });
         $(document.body).click((event) => {
             functions.toggleMenu(event);
         });
-        $('#lang-dropdown ul li').click((event) => {
-            functions.changeLanguage(event);
-        });
-        $('#currency-dropdown ul li').click((event) => {
-            functions.changeCurrency(event);
-        });
-        $('[data-modal]').click((event) => {
-            functions.toggleModal(event);
-        });
+        $('#lang-dropdown ul li').click(functions.changeLanguage);
+        $('#currency-dropdown ul li').click(functions.changeCurrency);
+        $('[data-modal]').click(functions.toggleModal);
         $(document.body).keydown((event) => {
             if (event.key == 'Escape') {
                 $('.modal-container').removeClass('active');

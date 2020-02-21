@@ -14,9 +14,15 @@ let banner = require('../templates/banner.ejs');
 let benefits = require('../templates/benefits.ejs');
 let popular = require('../templates/popular.ejs');
 let featured = require('../templates/featured.ejs');
+let category = require('../templates/category.ejs');
 let homePage = [top(), popular(), banner(), featured(), benefits()].join('');
+let categoryPage = [category({
+    previousPageUrl: '#',
+    previousPage: 'Home',
+    currentPage: 'Category landing Services'
+}), featured()];
 
-$(document.body).html(main({ content: homePage, year: new Date().getFullYear() }));
+$(document.body).html(main({ content: categoryPage, year: new Date().getFullYear() }));
 
 function init() {
     $('#top-slider-container').slick({

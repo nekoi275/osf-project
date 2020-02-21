@@ -48,11 +48,15 @@ let copyImg = function () {
         'node_modules/slick-carousel/slick/ajax-loader.gif'])
         .pipe(gulp.dest(path.resolve(output, 'img')));
 };
+let copyJSON = function () {
+    return gulp.src(['src/json/*'])
+        .pipe(gulp.dest(path.resolve(output, 'api')));
+};
 let buildJS = function () {
     return gulp.src('src/js/index.js').pipe(webpack(webpackConfig))
         .pipe(gulp.dest(output));
 };
-let copyAll = gulp.series(copyWebfonts, copyImg);
+let copyAll = gulp.series(copyWebfonts, copyImg, copyJSON);
 let build = gulp.parallel(buildCSS, copyAll, buildJS);
 gulp.task('clean', cleanTask);
 gulp.task('build', build);
