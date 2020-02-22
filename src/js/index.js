@@ -15,14 +15,22 @@ let benefits = require('../templates/benefits.ejs');
 let popular = require('../templates/popular.ejs');
 let featured = require('../templates/featured.ejs');
 let category = require('../templates/category.ejs');
+let product = require('../templates/product.ejs');
 let homePage = [top(), popular(), banner(), featured(), benefits()].join('');
 let categoryPage = [category({
     previousPageUrl: '#',
     previousPage: 'Home',
     currentPage: 'Category landing Services'
-}), featured()];
+}), featured()].join('');
+let productPage = [product({
+    previousPage: 'OSF Theme',
+    previousPageUrl: '#',
+    firstPageUrl: '#',
+    firstPage: 'Home',
+    currentPage: 'Ruffle Front V-Neck Cardigan'
+})];
 
-$(document.body).html(main({ content: categoryPage, year: new Date().getFullYear() }));
+$(document.body).html(main({ content: productPage, year: new Date().getFullYear() }));
 
 function init() {
     $('#top-slider-container').slick({

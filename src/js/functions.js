@@ -40,6 +40,17 @@ export default {
         } else {
             $(passwordField).attr('type', 'password');
         }
+    },
+    changeGalleryImage: (event) => {
+        let bigImg = $('.gallery-big-image > img');
+        $('.gallery-small-image').removeClass('active');
+        $(event.target).addClass('active');
+        $(bigImg).attr('src', $(event.target).attr('src'));
+    },
+    enlargeGalleryImage: () => {
+        let currentImg = $('.gallery-big-image > img').attr('src');
+        $('#gallery-modal > img').attr('src', currentImg);
+        $('#gallery-modal').addClass('active');
     }
 }
 

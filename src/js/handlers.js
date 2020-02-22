@@ -28,5 +28,7 @@ export default {
         $('.password-show').click(() => {
             functions.togglePass('#user-pass');
         });
+        $('.gallery-small-image').click(functions.changeGalleryImage);
+        $('#gallery-enlarge-button').click(functions.enlargeGalleryImage);
     }
 }

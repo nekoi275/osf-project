@@ -152,3 +152,21 @@ h6 {
 #currency-dropdown {
   right: 265px;
 }
+
+.breadcrumbs {
+  li {
+    text-transform: capitalize;
+    display: inline;
+  }
+  .prev-link::after {
+    padding: 8px;
+    content: "/\00a0";
+  }
+  li a {
+    color: $details-color;
+    text-transform: capitalize;
+    &:hover {
+      color: $dark-font-color;
+    }
+  }
+}
