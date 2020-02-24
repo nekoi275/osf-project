@@ -33,5 +33,8 @@ export default {
         $('[data-tab]').click((event) => {
             functions.changeTab(event);
         });
+        $('#cookies-accept-button').click(() => {
+            localStorage.setItem('isCookiesAccepted', true);
+        })
     }
 }

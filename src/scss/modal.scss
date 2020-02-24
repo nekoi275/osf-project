@@ -54,7 +54,7 @@
           cursor: pointer;
         }
         a {
-            float: right;
+          float: right;
         }
       }
       #login-form-button {
@@ -76,4 +76,39 @@
   position: fixed;
   border-radius: 0px;
   background-color: #000000;
+}
+
+#cookies-message {
+  .modal {
+    width: 1170px;
+    text-align: left;
+    padding: 25px;
+    h2 {
+      font-size: 16px;
+      color: $details-color;
+    }
+    p {
+      display: inline-block;
+      max-width: 830px;
+    }
+    a {
+      color: $details-color;
+    }
+    #cookies-accept-button {
+      @include button;
+      color: #ffffff;
+      border: 2px solid #d9d9d9;
+      background-color: $details-color;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-left: 70px;
+    }
+    .fas.fa-times {
+      color: $dark-font-color;
+      font-size: 25px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
 }

@@ -55,6 +55,9 @@ function init() {
         draggable: false
     });
     handlers.initHandlers();
+    if (!localStorage.isCookiesAccepted) {
+        setTimeout(() => {$('#cookies-message').addClass('active')}, 10000);
+    }
 }
 
 $(document).ready(init);
