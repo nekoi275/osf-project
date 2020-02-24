@@ -16,6 +16,7 @@ let popular = require('../templates/popular.ejs');
 let featured = require('../templates/featured.ejs');
 let category = require('../templates/category.ejs');
 let product = require('../templates/product.ejs');
+let page404 = require('../templates/404.ejs')
 let homePage = [top(), popular(), banner(), featured(), benefits()].join('');
 let categoryPage = [category({
     previousPageUrl: '#',
@@ -30,7 +31,11 @@ let productPage = [product({
     currentPage: 'Ruffle Front V-Neck Cardigan'
 }), popular(), benefits()].join('');
 
-$(document.body).html(main({ content: productPage, year: new Date().getFullYear() }));
+$(document.body).html(main({ content: page404({
+    previousPageUrl: '#',
+    previousPage: 'Home',
+    currentPage: '404'
+}), year: new Date().getFullYear() }));
 
 function init() {
     $('#top-slider-container').slick({
