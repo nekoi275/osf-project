@@ -4,6 +4,15 @@
   background-color: $base-color;
   text-align: center;
   padding: 80px 0px 60px 0px;
+  &.product-page-section {
+    background-color: #f2edea;
+    h3 {
+      color: $dark-font-color;
+    }
+    #load-more-button {
+      display: none;
+    }
+  }
 }
 
 h3 {

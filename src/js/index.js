@@ -28,7 +28,7 @@ let productPage = [product({
     firstPageUrl: '#',
     firstPage: 'Home',
     currentPage: 'Ruffle Front V-Neck Cardigan'
-})];
+}), popular(), benefits()].join('');
 
 $(document.body).html(main({ content: productPage, year: new Date().getFullYear() }));
 
