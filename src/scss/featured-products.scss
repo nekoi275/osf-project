@@ -52,7 +52,8 @@
   }
   .product-tile {
     img {
-      border-radius: 5px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
     }
     color: $dark-font-color;
     width: 270px;

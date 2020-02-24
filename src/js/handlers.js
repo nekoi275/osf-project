@@ -30,5 +30,8 @@ export default {
         });
         $('.gallery-small-image').click(functions.changeGalleryImage);
         $('#gallery-enlarge-button').click(functions.enlargeGalleryImage);
+        $('[data-tab]').click((event) => {
+            functions.changeTab(event);
+        });
     }
 }

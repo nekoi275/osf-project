@@ -51,6 +51,24 @@ export default {
         let currentImg = $('.gallery-big-image > img').attr('src');
         $('#gallery-modal > img').attr('src', currentImg);
         $('#gallery-modal').addClass('active');
+    },
+    fitMaxLength: (elem) => {
+        let maxLength = $('elem').attr('data-maxlength');
+        let fullText = $('elem').text();
+        let extraText = fullText.substring(maxLength);
+
+        if (fullText.length > maxLength) {
+            $(elem).text(fullText.substring(0, maxLength));
+        }
+        $((elem).attr('product-desc-text-rest')).text(extraText);
+    },
+    changeTab: (event) => {
+        $('[data-tab]').removeClass('active');
+        $('.tabs-content').removeClass('active');
+        let currentTab = $('[data-tab-content='+ $(event.target).data('tab') + ']'); 
+
+        $(event.target).addClass('active');
+        currentTab.addClass('active');
     }
 }
 
