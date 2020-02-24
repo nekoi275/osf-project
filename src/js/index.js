@@ -1,10 +1,14 @@
 import $ from 'jquery';
 import slick from 'slick-carousel';
 import handlers from './handlers';
+import Navigo from 'navigo';
+
+let root = null;
+let useHash = true;
+let router = new Navigo(root, useHash);
 
 global.jQuery = $;
 global.$ = $;
-global.slick = slick;
 
 $('head').append('<link rel="stylesheet" href="css/style.css"></link>');
 
@@ -31,11 +35,13 @@ let productPage = [product({
     currentPage: 'Ruffle Front V-Neck Cardigan'
 }), popular(), benefits()].join('');
 
-$(document.body).html(main({ content: page404({
-    previousPageUrl: '#',
-    previousPage: 'Home',
-    currentPage: '404'
-}), year: new Date().getFullYear() }));
+$(document.body).html(main({
+    content: page404({
+        previousPageUrl: '#',
+        previousPage: 'Home',
+        currentPage: '404'
+    }), year: new Date().getFullYear()
+}));
 
 function init() {
     $('#top-slider-container').slick({
@@ -56,8 +62,15 @@ function init() {
     });
     handlers.initHandlers();
     if (!localStorage.isCookiesAccepted) {
-        setTimeout(() => {$('#cookies-message').addClass('active')}, 10000);
+        setTimeout(() => { $('#cookies-message').addClass('active') }, 10000);
     }
 }
 
 $(document).ready(init);
+
+router.on(function () {
+    $(document.body).html(main({
+        content: homePage, year: new Date().getFullYear()
+    }));
+})
+    .resolve(); 
