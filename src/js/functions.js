@@ -27,11 +27,12 @@ export default {
         $('.lang[data-toggle="currency-dropdown"]').html(activeCurrency);
     },
     toggleModal: (event) => {
-        let action = $(event.target).attr('data-modal');
+        let modal = $(event.target).data('modal-id');
+        let action = $(event.target).data('modal');
         if (action == 'close') {
             $('.modal-container').removeClass('active');
         } else {
-            $('.modal-container').addClass('active');
+            $('#' + modal).addClass('active');
         }
     },
     togglePass: (passwordField) => {
