@@ -30,9 +30,12 @@ function initCommonHandlers() {
     $('#cookies-accept-button').click(() => {
         localStorage.setItem('isCookiesAccepted', true);
     });
-    $('[data-count]').click((event) => {
+    $('.product-tile-hover-button').click((event) => {
         functions.increaseCount(event);
-    })
+    });
+    $('.product-tile-button').click((event) => {
+        functions.increaseCount(event);
+    });
 };
 
 function initProductHandlers() {
@@ -47,6 +50,9 @@ function initProductHandlers() {
     $('[data-input]').click((event) => {
         functions.changeInputNumber(event);
     });
+    $('.add-to-cart').click((event) => {
+        functions.increaseCount(event, Number($('.quantity-value').val()));
+    })
 };
 
 export { initCommonHandlers, initProductHandlers}

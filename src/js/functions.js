@@ -73,9 +73,9 @@ export default {
     },
     increaseCount: (event, number) => {
         let countTarget = $('#' + $(event.target).data('count') + '-counter');
-        let count = $(countTarget).text();
+        let count = Number($(countTarget).text());
         if (number) {
-            $(countTarget).text(count * number);
+            $(countTarget).text(count + number);
         } else {
             $(countTarget).text(++count);
         }
