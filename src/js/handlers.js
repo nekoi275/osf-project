@@ -29,7 +29,7 @@ function initCommonHandlers() {
     });
     $('#cookies-accept-button').click(() => {
         localStorage.setItem('isCookiesAccepted', true);
-    })
+    });
 };
 
 function initProductHandlers() {

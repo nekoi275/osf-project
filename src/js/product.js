@@ -1,0 +1,25 @@
+import $ from 'jquery';
+import { initCommonHandlers, initProductHandlers } from './handlers';
+
+let product = require('../templates/product.ejs');
+let main = require('../templates/main.ejs');
+let benefits = require('../templates/benefits.ejs');
+let popular = require('../templates/popular.ejs');
+let productPage = [product({
+    previousPage: 'OSF Theme',
+    previousPageUrl: 'osf-theme',
+    firstPageUrl: '#',
+    firstPage: 'Home',
+    currentPage: 'Ruffle Front V-Neck Cardigan'
+}), popular(), benefits()].join('');
+
+function initProductPage() {
+    $(document.body).html(main({
+        content: productPage, year: new Date().getFullYear()
+    }));
+    initCommonHandlers();
+    initProductHandlers();
+    $('#popular').addClass('product-page-section');
+}
+
+export { initProductPage };

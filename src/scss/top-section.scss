@@ -34,10 +34,10 @@
     .view-more-button {
       @include button;
       border: 1px solid #ffffff;
-      color: #ffffff;
       padding-left: 33px;
       padding-right: 33px;
       margin: 48px 0px 48px 0px;
+      color: #ffffff;
     }
   }
   .slick-dots {

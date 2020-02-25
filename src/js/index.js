@@ -1,6 +1,9 @@
 import $ from 'jquery';
 import Navigo from 'navigo';
-import {initHomePage} from './homePage';
+import { initHomePage } from './homePage';
+import { initCategoryLanding } from './categoryLanding';
+import { notFoundHandler } from './404page';
+import { initProductPage } from './product';
 
 let root = null;
 let useHash = true;
@@ -11,24 +14,22 @@ global.$ = $;
 
 $('head').append('<link rel="stylesheet" href="css/style.css"></link>');
 
-
-/* let category = require('../templates/category.ejs');
-let product = require('../templates/product.ejs');
-let page404 = require('../templates/404.ejs');
-let categoryPage = [category({
-    previousPageUrl: '#',
-    previousPage: 'Home',
-    currentPage: 'Category landing Services'
-}), featured()].join('');
-let productPage = [product({
-    previousPage: 'OSF Theme',
-    previousPageUrl: '#',
-    firstPageUrl: '#',
-    firstPage: 'Home',
-    currentPage: 'Ruffle Front V-Neck Cardigan'
-}), popular(), benefits()].join(''); */
-
 router.on(function () {
     initHomePage();
+    router.updatePageLinks();
 })
-    .resolve(); 
+    .resolve();
+router.on('category-landing-services', () => {
+    initCategoryLanding();
+    router.updatePageLinks();
+})
+    .resolve();
+router.on('product-detail', () => {
+    initProductPage();
+    router.updatePageLinks();
+})
+    .resolve();
+router.notFound(() => {
+    notFoundHandler();
+    router.updatePageLinks();
+});
