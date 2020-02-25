@@ -52,7 +52,11 @@ function initProductHandlers() {
     });
     $('.add-to-cart').click((event) => {
         functions.increaseCount(event, Number($('.quantity-value').val()));
-    })
+    });
+    $('.read-more').click(() => {
+        $('#product-desc-text-rest').addClass('active');
+        $('.read-more').addClass('hidden');
+    });
 };
 
 export { initCommonHandlers, initProductHandlers}

@@ -13,6 +13,17 @@ let productPage = [product({
     currentPage: 'Ruffle Front V-Neck Cardigan'
 }), popular(), benefits()].join('');
 
+function fitMaxLength(elem, extraTextElem) {
+    let maxLength = $(elem).attr('data-maxlength');
+    let fullText = $(elem).text();
+    let extraText = fullText.substring(maxLength);
+
+    if (fullText.length > maxLength) {
+        $(elem).text(fullText.substring(0, maxLength));
+    }
+    $(extraTextElem).text(extraText);
+}
+
 function initProductPage() {
     $(document.body).html(main({
         content: productPage, 
@@ -23,6 +34,7 @@ function initProductPage() {
     initCommonHandlers();
     initProductHandlers();
     $('#popular').addClass('product-page-section');
+    fitMaxLength($('p[data-maxlength]'), $('#product-desc-text-rest'));
 }
 
 export { initProductPage };
