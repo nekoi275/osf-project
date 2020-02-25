@@ -10,7 +10,10 @@ function notFoundHandler() {
             previousPageUrl: '#',
             currentPage: '404',
             previousPage: 'Home',
-        }), year: new Date().getFullYear()
+        }), 
+        year: new Date().getFullYear(),
+        wishlistCount: localStorage.getItem('wishlist') || 0,
+        cartCount: localStorage.getItem('cart') || 0
     }));
     initCommonHandlers();
 }

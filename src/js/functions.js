@@ -79,6 +79,7 @@ export default {
         } else {
             $(countTarget).text(++count);
         }
+        localStorage.setItem($(event.target).data('count'), $(countTarget).text());
     },
     validateNumbers: (event) => {
         let numberVal = Number.isInteger(Number($(event.target).val()));

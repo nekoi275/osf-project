@@ -13,7 +13,10 @@ let categoryPage = [category({
 
 function initCategoryLanding() {
     $(document.body).html(main({
-        content: categoryPage, year: new Date().getFullYear()
+        content: categoryPage, 
+        year: new Date().getFullYear(),
+        wishlistCount: localStorage.getItem('wishlist') || 0,
+        cartCount: localStorage.getItem('cart') || 0
     }));
     $('#featured-products-slider').slick({
         dots: false,

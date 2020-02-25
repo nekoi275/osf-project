@@ -12,7 +12,10 @@ let homePage = [top(), popular(), banner(), featured(), benefits()].join('');
 
 function initHomePage () {
     $(document.body).html(main({
-        content: homePage, year: new Date().getFullYear()
+        content: homePage, 
+        year: new Date().getFullYear(),
+        wishlistCount: localStorage.getItem('wishlist') || 0,
+        cartCount: localStorage.getItem('cart') || 0
     }));
     initCommonHandlers();
     if (!localStorage.isCookiesAccepted) {

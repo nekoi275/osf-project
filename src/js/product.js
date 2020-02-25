@@ -15,7 +15,10 @@ let productPage = [product({
 
 function initProductPage() {
     $(document.body).html(main({
-        content: productPage, year: new Date().getFullYear()
+        content: productPage, 
+        year: new Date().getFullYear(), 
+        wishlistCount: localStorage.getItem('wishlist') || 0,
+        cartCount: localStorage.getItem('cart') || 0
     }));
     initCommonHandlers();
     initProductHandlers();
