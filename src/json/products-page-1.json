@@ -1,0 +1,44 @@
+[
+    {
+        "imageUrl": "img/product_1.png",
+        "text": "Kristina Dam Oak Table With White Marble Top",
+        "price": 799.55,
+        "type": "hover"
+    },
+    {
+        "imageUrl": "img/product_2.png",
+        "text": "Hay - About A Lounge Chair AAL 93",
+        "price": 659.55,
+        "type": "button"
+    },
+    {
+        "imageUrl": "img/product_3.png",
+        "text": "Activate Facial Mask and Charcoal Soap",
+        "price": 129.55,
+        "type": "hover"
+    },
+    {
+        "imageUrl": "img/product_4.png",
+        "text": "Cocktail Table Walnut | YES",
+        "price": 299.99,
+        "type": "hover"
+    },
+    {
+        "imageUrl": "img/product_7.png",
+        "text": "Hay - About A Lounge Chair AAL 93",
+        "price": 659.55,
+        "type": "hover"
+    },
+    {
+        "imageUrl": "img/product_6.png",
+        "text": "TORY DESK CALENDAR",
+        "price": 410.99,
+        "type": "hover"
+    },
+    {
+        "imageUrl": "img/product_5.png",
+        "text": "CH445 Wing Chair on SUITE NY",
+        "price": 410.99,
+        "type": "hover"
+    }
+]

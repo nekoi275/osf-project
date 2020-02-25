@@ -5,13 +5,13 @@ import slick from 'slick-carousel';
 let category = require('../templates/category.ejs');
 let featured = require('../templates/featured.ejs');
 let main = require('../templates/main.ejs');
-let categoryPage = [category({
-    previousPageUrl: '#',
-    previousPage: 'Home',
-    currentPage: 'Category landing Services'
-}), featured()].join('');
 
 function initCategoryLanding() {
+    let categoryPage = [category({
+        previousPageUrl: '#',
+        previousPage: 'Home',
+        currentPage: 'Category landing Services'
+    }), featured()].join('');
     $(document.body).html(main({
         content: categoryPage, 
         year: new Date().getFullYear(),

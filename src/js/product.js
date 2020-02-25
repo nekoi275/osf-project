@@ -5,13 +5,6 @@ let product = require('../templates/product.ejs');
 let main = require('../templates/main.ejs');
 let benefits = require('../templates/benefits.ejs');
 let popular = require('../templates/popular.ejs');
-let productPage = [product({
-    previousPage: 'OSF Theme',
-    previousPageUrl: 'osf-theme',
-    firstPageUrl: '#',
-    firstPage: 'Home',
-    currentPage: 'Ruffle Front V-Neck Cardigan'
-}), popular(), benefits()].join('');
 
 function fitMaxLength(elem, extraTextElem) {
     let maxLength = $(elem).attr('data-maxlength');
@@ -25,6 +18,13 @@ function fitMaxLength(elem, extraTextElem) {
 }
 
 function initProductPage() {
+    let productPage = [product({
+        previousPage: 'OSF Theme',
+        previousPageUrl: 'osf-theme',
+        firstPageUrl: '#',
+        firstPage: 'Home',
+        currentPage: 'Ruffle Front V-Neck Cardigan'
+    }), popular(), benefits()].join('');
     $(document.body).html(main({
         content: productPage, 
         year: new Date().getFullYear(), 
