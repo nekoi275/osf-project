@@ -1,7 +1,6 @@
 import $ from 'jquery';
-import slick from 'slick-carousel';
-import handlers from './handlers';
 import Navigo from 'navigo';
+import {initHomePage} from './homePage';
 
 let root = null;
 let useHash = true;
@@ -12,16 +11,10 @@ global.$ = $;
 
 $('head').append('<link rel="stylesheet" href="css/style.css"></link>');
 
-let main = require('../templates/main.ejs');
-let top = require('../templates/top.ejs');
-let banner = require('../templates/banner.ejs');
-let benefits = require('../templates/benefits.ejs');
-let popular = require('../templates/popular.ejs');
-let featured = require('../templates/featured.ejs');
-let category = require('../templates/category.ejs');
+
+/* let category = require('../templates/category.ejs');
 let product = require('../templates/product.ejs');
-let page404 = require('../templates/404.ejs')
-let homePage = [top(), popular(), banner(), featured(), benefits()].join('');
+let page404 = require('../templates/404.ejs');
 let categoryPage = [category({
     previousPageUrl: '#',
     previousPage: 'Home',
@@ -33,44 +26,9 @@ let productPage = [product({
     firstPageUrl: '#',
     firstPage: 'Home',
     currentPage: 'Ruffle Front V-Neck Cardigan'
-}), popular(), benefits()].join('');
-
-$(document.body).html(main({
-    content: page404({
-        previousPageUrl: '#',
-        previousPage: 'Home',
-        currentPage: '404'
-    }), year: new Date().getFullYear()
-}));
-
-function init() {
-    $('#top-slider-container').slick({
-        dots: true,
-        appendDots: $('#top-slider-container'),
-        infinite: true,
-        arrows: false
-    });
-    $('#featured-products-slider').slick({
-        dots: false,
-        infinite: true,
-        arrows: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        draggable: false
-    });
-    handlers.initHandlers();
-    if (!localStorage.isCookiesAccepted) {
-        setTimeout(() => { $('#cookies-message').addClass('active') }, 10000);
-    }
-}
-
-$(document).ready(init);
+}), popular(), benefits()].join(''); */
 
 router.on(function () {
-    $(document.body).html(main({
-        content: homePage, year: new Date().getFullYear()
-    }));
+    initHomePage();
 })
     .resolve(); 
