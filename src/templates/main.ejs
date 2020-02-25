@@ -21,8 +21,8 @@
         <span class="far fa-user" data-modal="open" data-modal-id="login-modal"></span>
         <span class="far fa-heart"></span>
         <span class="fas fa-shopping-bag"></span>
-        <span class="count wishlist">0</span>
-        <span class="count products">0</span>
+        <span class="count wishlist" id="wishlist-counter">0</span>
+        <span class="count products" id="cart-counter">0</span>
     </nav>
 </header>
 <div id="mega-menu" class="dropdown">
@@ -106,7 +106,7 @@
                 <input type="email" required>
             </label>
             <label>Password
-                <a href="#">Forgot password</a>
+                <a href="forgot-password" data-navigo>Forgot password</a>
                 <input id="user-pass" title="at least 1 numeric, 1 uppercase, 1 lowercase and 1 special character"
                     type="password" minlength="6" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*]).{6,}"
                     required>
@@ -114,7 +114,7 @@
             </label>
             <button id="login-form-button" type="submit" name="password">Login</button>
         </form>
-        <a href="#">I don't have an account</a>
+        <a href="create-account" data-navigo>I don't have an account</a>
     </div>
 </div>
 <div id="cookies-message" class="modal-container">
@@ -126,7 +126,7 @@
             performance
             and interaction with social media offering publicity tailored to your interests. If you continue browsing,
             we consider that you accept its use.
-            You can expand this information consulting our <a href="#">Cookies Policy Page.</a></p>
+            You can expand this information consulting our <a href="cookies-policy" data-navigo>Cookies Policy Page.</a></p>
             <button id="cookies-accept-button" data-modal="close">Accept</button>
         </div>
 </div>

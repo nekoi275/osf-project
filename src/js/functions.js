@@ -66,10 +66,34 @@ export default {
     changeTab: (event) => {
         $('[data-tab]').removeClass('active');
         $('.tabs-content').removeClass('active');
-        let currentTab = $('[data-tab-content='+ $(event.target).data('tab') + ']'); 
+        let currentTab = $('[data-tab-content=' + $(event.target).data('tab') + ']');
 
         $(event.target).addClass('active');
         currentTab.addClass('active');
+    },
+    increaseCount: (event, number) => {
+        let countTarget = $('#' + $(event.target).data('count') + '-counter');
+        let count = $(countTarget).text();
+        if (number) {
+            $(countTarget).text(count * number);
+        } else {
+            $(countTarget).text(++count);
+        }
+    },
+    validateNumbers: (event) => {
+        let numberVal = Number.isInteger(Number($(event.target).val()));
+        if (!numberVal) {
+            $(event.target).val('');
+        }
+    },
+    changeInputNumber: (event) => {
+        let action = $(event.target).data('input');
+        let count = $('.quantity-value').val();
+        if (action == 'increase') {
+            $('.quantity-value').val(++ count);
+        } else {
+            $('.quantity-value').val(-- count);
+        }
     }
 }
 

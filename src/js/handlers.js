@@ -30,6 +30,9 @@ function initCommonHandlers() {
     $('#cookies-accept-button').click(() => {
         localStorage.setItem('isCookiesAccepted', true);
     });
+    $('[data-count]').click((event) => {
+        functions.increaseCount(event);
+    })
 };
 
 function initProductHandlers() {
@@ -37,6 +40,12 @@ function initProductHandlers() {
     $('#gallery-enlarge-button').click(functions.enlargeGalleryImage);
     $('[data-tab]').click((event) => {
         functions.changeTab(event);
+    });
+    $('.quantity-value').change((event) => {
+        functions.validateNumbers(event);
+    });
+    $('[data-input]').click((event) => {
+        functions.changeInputNumber(event);
     });
 };
 

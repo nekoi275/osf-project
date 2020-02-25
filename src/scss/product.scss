@@ -112,10 +112,10 @@
 
 #product-quantity-button {
   @include button;
+  user-select: none;
   padding: 9px;
   border: 2px solid $light-font-color;
-  width: 100px;
-  display: inline-block;
+  display: inline;
   font-size: 18px;
   text-align: center;
   margin-right: 25px;
@@ -123,6 +123,9 @@
     color: $light-font-color;
   }
   .quantity-value {
+    border: none;
+    width: 20px;
+    text-align: center;
     padding: 0px 15px 0px 15px;
   }
 }
