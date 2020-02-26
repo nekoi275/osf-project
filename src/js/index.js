@@ -14,21 +14,17 @@ global.$ = $;
 
 $('head').append('<link rel="stylesheet" href="css/style.css"></link>');
 
-router.on(function () {
-    initHomePage();
-    router.updatePageLinks();
-})
-    .resolve();
-router.on('category-landing-services', () => {
-    initCategoryLanding();
-    router.updatePageLinks();
-})
-    .resolve();
-router.on('product-detail', () => {
-    initProductPage();
-    router.updatePageLinks();
-})
-    .resolve();
+router.on({
+    '/': function () { initHomePage(() => { router.updatePageLinks() }) },
+    'category-landing-services': function () { 
+        initCategoryLanding();
+        router.updatePageLinks(); 
+    },
+    'product-detail': function () { 
+        initProductPage();
+        router.updatePageLinks(); 
+    }}).resolve();
+
 router.notFound(() => {
     notFoundHandler();
     router.updatePageLinks();

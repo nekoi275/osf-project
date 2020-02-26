@@ -30,12 +30,6 @@ function initCommonHandlers() {
     $('#cookies-accept-button').click(() => {
         localStorage.setItem('isCookiesAccepted', true);
     });
-    $('.product-tile-hover-button').click((event) => {
-        functions.increaseCount(event);
-    });
-    $('.product-tile-button').click((event) => {
-        functions.increaseCount(event);
-    });
 };
 
 function initProductHandlers() {
@@ -59,4 +53,13 @@ function initProductHandlers() {
     });
 };
 
-export { initCommonHandlers, initProductHandlers}
+function initProductTileHandlers() {
+    $('.product-tile-hover-button').click((event) => {
+        functions.increaseCount(event);
+    });
+    $('.product-tile-button').click((event) => {
+        functions.increaseCount(event);
+    });
+};
+
+export { initCommonHandlers, initProductHandlers, initProductTileHandlers }

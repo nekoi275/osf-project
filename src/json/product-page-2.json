@@ -1,0 +1,26 @@
+[
+    {
+        "imageUrl": "img/product_8.png",
+        "text": "EAMES x Cast + Crew - Custom Powder Coated ",
+        "price": 799.55,
+        "type": "hover"
+    },
+    {
+        "imageUrl": "img/product_9.png",
+        "text": "Vitra Cork Stool B, Cork - Design Within Reach",
+        "price": 299.99,
+        "type": "hover"
+    },
+    {
+        "imageUrl": "img/product_10.png",
+        "text": "MONOQI | Ø55 Crossit Table - Wht/Grn",
+        "price": 129.55,
+        "type": "hover"
+    },
+    {
+        "imageUrl": "img/product_1.png",
+        "text": "Cocktail Table Walnut | YES",
+        "price": 299.99,
+        "type": "hover"
+    }
+]
