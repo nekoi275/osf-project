@@ -1,5 +1,6 @@
 import $ from 'jquery';
-import { initCommonHandlers, initProductHandlers } from './handlers';
+import { initCommonHandlers, initProductHandlers, initProductTileHandlers } from './handlers';
+import { getProductTiles } from './productTile';
 
 let product = require('../templates/product.ejs');
 let main = require('../templates/main.ejs');
@@ -17,7 +18,7 @@ function fitMaxLength(elem, extraTextElem) {
     $(extraTextElem).text(extraText);
 }
 
-function initProductPage() {
+function initProductPage(afterInit) {
     let productPage = [product({
         previousPage: 'OSF Theme',
         previousPageUrl: 'osf-theme',
@@ -31,6 +32,11 @@ function initProductPage() {
         wishlistCount: localStorage.getItem('wishlist') || 0,
         cartCount: localStorage.getItem('cart') || 0
     }));
+    getProductTiles('api/popular-products.json', productTiles => {
+        $('.products-container').html(productTiles);
+        initProductTileHandlers();
+        afterInit();
+    });
     initCommonHandlers();
     initProductHandlers();
     $('#popular').addClass('product-page-section');

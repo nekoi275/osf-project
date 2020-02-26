@@ -1,0 +1,26 @@
+[
+    {
+        "imageUrl": "img/product_10.png",
+        "text": "Kristina Dam Oak Table With White Marble Top",
+        "price": 799.55,
+        "type": "hover"
+    },
+    {
+        "imageUrl": "img/product_11.png",
+        "text": "Kristina Dam Oak Table With White Marble Top",
+        "price": 2195.00,
+        "type": "hover"
+    },
+    {
+        "imageUrl": "img/product_4.png",
+        "text": "Activate Facial Mask and Charcoal Soap",
+        "price": 129.55,
+        "type": "hover"
+    },
+    {
+        "imageUrl": "img/product_12.png",
+        "text": "Cocktail Table Walnut | YES",
+        "price": 629.99,
+        "type": "hover"
+    }
+]

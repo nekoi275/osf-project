@@ -19,10 +19,7 @@ router.on({
     'category-landing-services': function () { 
         initCategoryLanding(() => { router.updatePageLinks() }); 
     },
-    'product-detail': function () {
-        initProductPage();
-        router.updatePageLinks();
-    }
+    'product-detail': function () { initProductPage(() => { router.updatePageLinks() }) },
 }).resolve();
 
 router.notFound(() => {
