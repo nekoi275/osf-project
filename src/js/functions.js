@@ -11,22 +11,22 @@ export default {
         $('.dropdown').removeClass('active');
         $('.dropdown-button').removeClass('active');
     },
-    showMenu: (event) => {
+    showMenu: event => {
         let menuID = $(event.target).data('toggle');
         if (menuID) {
             $('#' + menuID).addClass('active');
             $(event.target).addClass('active');
         }
     },
-    changeLanguage: (event) => {
+    changeLanguage: event => {
         let activeLang = $(event.target).html();
         $('.lang[data-toggle="lang-dropdown"]').html(activeLang);
     },
-    changeCurrency: (event) => {
+    changeCurrency: event => {
         let activeCurrency = $(event.target).html();
         $('.lang[data-toggle="currency-dropdown"]').html(activeCurrency);
     },
-    toggleModal: (event) => {
+    toggleModal: event => {
         let modal = $(event.target).data('modal-id');
         let action = $(event.target).data('modal');
         if (action == 'close') {
@@ -35,14 +35,14 @@ export default {
             $('#' + modal).addClass('active');
         }
     },
-    togglePass: (passwordField) => {
+    togglePass: passwordField => {
         if ($(passwordField).attr('type') === 'password') {
             $(passwordField).attr('type', 'text');
         } else {
             $(passwordField).attr('type', 'password');
         }
     },
-    changeGalleryImage: (event) => {
+    changeGalleryImage: event => {
         let bigImg = $('.gallery-big-image > img');
         $('.gallery-small-image').removeClass('active');
         $(event.target).addClass('active');
@@ -53,7 +53,7 @@ export default {
         $('#gallery-modal > img').attr('src', currentImg);
         $('#gallery-modal').addClass('active');
     },
-    changeTab: (event) => {
+    changeTab: event => {
         $('[data-tab]').removeClass('active');
         $('.tabs-content').removeClass('active');
         let currentTab = $('[data-tab-content=' + $(event.target).data('tab') + ']');
@@ -71,13 +71,13 @@ export default {
         }
         localStorage.setItem($(event.target).data('count'), $(countTarget).text());
     },
-    validateNumbers: (event) => {
+    validateNumbers: event => {
         let numberVal = Number.isInteger(Number($(event.target).val()));
         if (!numberVal) {
             $(event.target).val('');
         }
     },
-    changeInputNumber: (event) => {
+    changeInputNumber: event => {
         let action = $(event.target).data('input');
         let count = $('.quantity-value').val();
         if (action == 'increase') {

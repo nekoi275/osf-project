@@ -2,10 +2,10 @@ import $ from 'jquery';
 import functions from './functions';
 
 function initCommonHandlers() {
-    $('.dropdown-button').click((event) => {
+    $('.dropdown-button').click(event => {
         functions.toggleMenu(event);
     });
-    $('.dropdown-button,.dropdown').hover(functions.showMenu, (event) => {
+    $('.dropdown-button,.dropdown').hover(functions.showMenu, event => {
         let mouseOutElem = $(event.relatedTarget);
         let isDropdown = (mouseOutElem.parents('.dropdown').length > 0)
             || (mouseOutElem.hasClass('dropdown'));
@@ -13,13 +13,13 @@ function initCommonHandlers() {
             functions.hideAllMenu(event);
         }
     });
-    $(document.body).click((event) => {
+    $(document.body).click(event => {
         functions.toggleMenu(event);
     });
     $('#lang-dropdown ul li').click(functions.changeLanguage);
     $('#currency-dropdown ul li').click(functions.changeCurrency);
     $('[data-modal]').click(functions.toggleModal);
-    $(document.body).keydown((event) => {
+    $(document.body).keydown(event => {
         if (event.key == 'Escape') {
             $('.modal-container').removeClass('active');
         }
@@ -38,13 +38,13 @@ function initProductHandlers() {
     $('[data-tab]').click((event) => {
         functions.changeTab(event);
     });
-    $('.quantity-value').change((event) => {
+    $('.quantity-value').change(event => {
         functions.validateNumbers(event);
     });
-    $('[data-input]').click((event) => {
+    $('[data-input]').click(event => {
         functions.changeInputNumber(event);
     });
-    $('.add-to-cart').click((event) => {
+    $('.add-to-cart').click(event => {
         functions.increaseCount(event, Number($('.quantity-value').val()));
     });
     $('.read-more').click(() => {
@@ -57,7 +57,7 @@ function initProductTileHandlers() {
     $('.product-tile-hover-button').click((event) => {
         functions.increaseCount(event);
     });
-    $('.product-tile-button').click((event) => {
+    $('.product-tile-button').click(event => {
         functions.increaseCount(event);
     });
 };

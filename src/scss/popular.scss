@@ -45,6 +45,9 @@
     margin-left: 20px;
     font-size: 20px;
   }
+  &.hidden {
+    display: none;
+  }
 }
 
 .products-container {
