@@ -1,34 +1,37 @@
 import $ from 'jquery';
-import { initCommonHandlers } from './handlers';
-import slick from 'slick-carousel';
+import { initCommonHandlers, initProductTileHandlers } from './handlers';
+import { initFeaturedSlider } from './sliders';
+import { getProductTiles, addProductTiles } from './productTile';
 
 let category = require('../templates/category.ejs');
 let featured = require('../templates/featured.ejs');
 let main = require('../templates/main.ejs');
 
-function initCategoryLanding() {
+function initCategoryLanding(afterInit) {
     let categoryPage = [category({
         previousPageUrl: '#',
         previousPage: 'Home',
         currentPage: 'Category landing Services'
     }), featured()].join('');
     $(document.body).html(main({
-        content: categoryPage, 
+        content: categoryPage,
         year: new Date().getFullYear(),
         wishlistCount: localStorage.getItem('wishlist') || 0,
         cartCount: localStorage.getItem('cart') || 0
     }));
-    $('#featured-products-slider').slick({
-        dots: false,
-        infinite: true,
-        arrows: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        draggable: false
-    });
     initCommonHandlers();
+    $('#category-load-more-button').click(() => {
+        getProductTiles('api/products-page-2.json', productTiles => {
+            addProductTiles(productTiles, initProductTileHandlers);
+            afterInit();
+        });
+        $('#category-load-more-button').addClass('hidden');
+    });
+    initFeaturedSlider();
+    getProductTiles('api/products-category-page.json', productTiles => {
+        addProductTiles(productTiles, initProductTileHandlers);
+        afterInit();
+    });
     if (!localStorage.isCookiesAccepted) {
         setTimeout(() => { $('#cookies-message').addClass('active') }, 10000);
     }

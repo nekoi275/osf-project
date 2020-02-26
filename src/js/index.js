@@ -17,13 +17,13 @@ $('head').append('<link rel="stylesheet" href="css/style.css"></link>');
 router.on({
     '/': function () { initHomePage(() => { router.updatePageLinks() }) },
     'category-landing-services': function () { 
-        initCategoryLanding();
-        router.updatePageLinks(); 
+        initCategoryLanding(() => { router.updatePageLinks() }); 
     },
-    'product-detail': function () { 
+    'product-detail': function () {
         initProductPage();
-        router.updatePageLinks(); 
-    }}).resolve();
+        router.updatePageLinks();
+    }
+}).resolve();
 
 router.notFound(() => {
     notFoundHandler();

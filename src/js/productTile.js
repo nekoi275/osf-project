@@ -15,4 +15,9 @@ function getProductTiles(link, onLoad) {
     })
 };
 
-export { getProductTiles };
+function addProductTiles(productTiles, handlersFunction) {
+    $('.products-container').append(productTiles);
+    handlersFunction();
+};
+
+export { getProductTiles, addProductTiles };

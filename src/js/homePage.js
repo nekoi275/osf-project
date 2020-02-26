@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import { initCommonHandlers, initProductTileHandlers } from './handlers';
-import { getProductTiles } from './productTile';
+import { getProductTiles, addProductTiles } from './productTile';
 import { initTopSlider, initFeaturedSlider } from './sliders';
 
 let main = require('../templates/main.ejs');
@@ -9,11 +9,6 @@ let banner = require('../templates/banner.ejs');
 let benefits = require('../templates/benefits.ejs');
 let popular = require('../templates/popular.ejs');
 let featured = require('../templates/featured.ejs');
-
-function addProductTiles(productTiles) {
-    $('.products-container').append(productTiles);
-    initProductTileHandlers();
-};
 
 function initHomePage(afterInit) {
     let homePage = [top(), popular(), banner(), featured(), benefits()].join('');
@@ -28,7 +23,7 @@ function initHomePage(afterInit) {
     }
     $('#load-more-button').click(() => {
         getProductTiles('api/products-page-2.json', productTiles => {
-            addProductTiles(productTiles);
+            addProductTiles(productTiles, initProductTileHandlers);
             afterInit();
         });
         $('#load-more-button').addClass('hidden');
@@ -38,7 +33,7 @@ function initHomePage(afterInit) {
     initFeaturedSlider();
     $('#popular').removeClass('product-page-section');
     getProductTiles('api/products-page-1.json', productTiles => {
-        addProductTiles(productTiles);
+        addProductTiles(productTiles, initProductTileHandlers);
         afterInit();
     });
 }
