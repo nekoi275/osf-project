@@ -14,10 +14,20 @@ global.$ = $;
 
 $('head').append('<link rel="stylesheet" href="css/style.css"></link>');
 
+function switchToMobile() {
+    if ($(window).width() < 768) {
+        $('.desktop').addClass('hidden');
+        $('.mobile').removeClass('hidden');
+    } else {
+        $('.desktop').removeClass('hidden');
+        $('.mobile').addClass('hidden');
+    }
+}
+
 router.on({
     '/': function () { initHomePage(() => { router.updatePageLinks() }) },
-    'category-landing-services': function () { 
-        initCategoryLanding(() => { router.updatePageLinks() }); 
+    'category-landing-services': function () {
+        initCategoryLanding(() => { router.updatePageLinks() });
     },
     'product-detail': function () { initProductPage(() => { router.updatePageLinks() }) },
 }).resolve();
@@ -26,3 +36,6 @@ router.notFound(() => {
     notFoundHandler();
     router.updatePageLinks();
 });
+
+$(document).ready(switchToMobile);
+$(window).resize(switchToMobile);

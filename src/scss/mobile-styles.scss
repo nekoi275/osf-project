@@ -1,0 +1,15 @@
+@media (max-width: 767px) {
+  .logo {
+    display: flex;
+    margin: auto;
+    .logo-text {
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+.hidden {
+    display: none;
+}
