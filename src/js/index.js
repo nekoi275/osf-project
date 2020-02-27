@@ -15,7 +15,7 @@ global.$ = $;
 $('head').append('<link rel="stylesheet" href="css/style.css"></link>');
 
 function switchToMobile() {
-    if ($(window).width() < 768) {
+    if ($(window).width() < 767) {
         $('.desktop').addClass('hidden');
         $('.mobile').removeClass('hidden');
     } else {

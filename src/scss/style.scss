@@ -1,5 +1,10 @@
 @use "fonts";
-@use "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/main";
+@use "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/main" with (
+    $xs-max: 20rem,
+    $sm-max: 48rem,
+    $md-max: 73rem,
+    $lg-max: 120rem
+);
 @use "../../node_modules/slick-carousel/slick/slick";
 @use "../../node_modules/slick-carousel/slick/slick-theme" with (
     $slick-font-path: "/webfonts/",

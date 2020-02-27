@@ -23,4 +23,15 @@ function initFeaturedSlider() {
     });
 };
 
-export {initTopSlider, initFeaturedSlider};
+function initPopularProductsSlider() {
+    $('#popular-products-slider').slick({
+        dots: true,
+        infinite: true,
+        arrows: false,
+        draggable: true,
+        variableWidth: true,
+        centerMode: true
+    });
+};
+
+export { initTopSlider, initFeaturedSlider, initPopularProductsSlider };
