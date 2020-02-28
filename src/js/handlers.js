@@ -16,8 +16,8 @@ function initCommonHandlers() {
     $(document.body).click(event => {
         functions.toggleMenu(event);
     });
-    $('#lang-dropdown ul li').click(functions.changeLanguage);
-    $('#currency-dropdown ul li').click(functions.changeCurrency);
+    $('#lang-dropdown span').click(functions.changeLanguage);
+    $('#currency-dropdown span').click(functions.changeCurrency);
     $('[data-modal]').click(functions.toggleModal);
     $(document.body).keydown(event => {
         if (event.key == 'Escape') {

@@ -129,28 +129,26 @@ h6 {
   margin-left: 30px;
 }
 
+.relative {
+  position: relative;
+}
+
 .dropdown-small {
   @include dropdown;
-  width: 100px;
-  ul {
-    li {
-      padding: 15px;
-      cursor: pointer;
-      color: #ffffff;
-      &:hover {
-        background-color: #ffffff;
-        color: $dark-font-color;
-      }
+  width: 100%;
+  top: 56px;
+  left: 0px;
+  span {
+    display: block;
+    box-sizing: border-box;
+    padding: 15px;
+    cursor: pointer;
+    color: #ffffff;
+    &:hover {
+      background-color: #ffffff;
+      color: $dark-font-color;
     }
   }
-}
-
-#lang-dropdown {
-  right: 360px;
-}
-
-#currency-dropdown {
-  right: 265px;
 }
 
 .breadcrumbs {

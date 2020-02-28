@@ -19,12 +19,12 @@ export default {
         }
     },
     changeLanguage: event => {
-        let activeLang = $(event.target).html();
-        $('.lang[data-toggle="lang-dropdown"]').html(activeLang);
+        let activeLang = $(event.target).text();
+        $('.lang[data-toggle="lang-dropdown"]').text(activeLang);
     },
     changeCurrency: event => {
-        let activeCurrency = $(event.target).html();
-        $('.lang[data-toggle="currency-dropdown"]').html(activeCurrency);
+        let activeCurrency = $(event.target).text();
+        $('.lang[data-toggle="currency-dropdown"]').text(activeCurrency);
     },
     toggleModal: event => {
         let modal = $(event.target).data('modal-id');
