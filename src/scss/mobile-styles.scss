@@ -61,6 +61,30 @@
       }
     }
   }
+  #category-landing {
+    .hide-filter {
+      color: $details-color;
+      display: block;
+      margin-bottom: 20px;
+    }
+    h6 {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      &::after,
+      &::before {
+        content: "";
+        border-bottom: 1px solid #ffffff;
+        flex: 1;
+      }
+      &::after {
+        margin-left: 25px;
+      }
+      &::before {
+        margin-right: 25px;
+      }
+    }
+  }
 }
 
 @media (max-width: 1199px) {
@@ -118,7 +142,8 @@ nav.hide-1200 {
   padding: 20px;
   text-align: center;
   box-sizing: border-box;
-  .fas,.far {
+  .fas,
+  .far {
     color: $light-font-color;
     position: relative;
   }
