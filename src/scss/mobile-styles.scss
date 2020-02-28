@@ -92,3 +92,14 @@
     margin: 0px 10px 0px 10px;
   }
 }
+
+footer.mobile {
+  padding: 20px;
+  h2 {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  .arrow::after {
+    float: right;
+  }
+}
