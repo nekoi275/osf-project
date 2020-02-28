@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-const MOBILE_WIDTH = 767;
+const MOBILE_WIDTH = 768;
 
 export default {
     isMobile: () => {

@@ -1,5 +1,6 @@
 <header>
-    <span class="fas fa-bars mobile hidden"></span>
+    <span class="fas fa-bars mobile hidden" id="mobile-menu-button" data-mobile-menu="open"></span>
+    <span class="fas fa-times mobile hidden not-shown" id="mobile-menu-button" data-mobile-menu="close"></span>
     <div class="logo">
         <a href="#">
             <img src="img/logo_icon.png" alt="OSF logo">
@@ -37,7 +38,7 @@
         <span class="show-1200 count products" id="cart-counter"><%= cartCount %></span>
     </nav>
 </header>
-<div id="mega-menu" class="dropdown">
+<div id="mega-menu" class="dropdown desktop">
     <div class="wrapper">
         <div class="row bottom">
             <div class="col">
@@ -95,6 +96,66 @@
             </div>
         </div>
     </div>
+</div>
+<div id="mega-menu-mobile" class="mobile">
+    <ul>
+        <li>
+            <h2 class="arrow open-next-level" data-menu-level="services-menu">Services</h2>
+            <ul class="hidden" id="services-menu">
+                <li>
+                    <span class="arrow open-next-level" data-menu-level="product-categories">Product categories</span>
+                    <ul class="hidden" id="product-categories">
+                        <li><a href="accessories" data-navigo>Accessories</a></li>
+                        <li><a href="alcohol" data-navigo>Alcohol</a></li>
+                        <li><a href="art" data-navigo>Art</a></li>
+                        <li><a href="books" data-navigo>Books</a></li>
+                        <li><a href="drink" data-navigo>Drink</a></li>
+                        <li><a href="electronics" data-navigo>Electronics</a></li>
+                        <li><a href="flowers" data-navigo>Flowers & Plants</a></li>
+                        <li><a href="food" data-navigo>Food</a></li>
+                        <li><a href="gadgets" data-navigo>Gadgets</a></li>
+                        <li><a href="gardens" data-navigo>Gardens</a></li>
+                        <li><a href="grocery" data-navigo>Grocery</a></li>
+                        <li><a href="home" data-navigo>Home</a></li>
+                        <li><a href="jewelry" data-navigo>Jewelry</a></li>
+                        <li><a href="kids" data-navigo>Kids & Baby</a></li>
+                        <li><a href="men" data-navigo>Men's fashion</a></li>
+                        <li><a href="mobile" data-navigo>Mobile</a></li>
+                        <li><a href="motorcycles" data-navigo>Motorcycles</a></li>
+                        <li><a href="movies" data-navigo>Movies</a></li>
+                        <li><a href="music" data-navigo>Music</a></li>
+                        <li><a href="office" data-navigo>Office</a></li>
+                        <li><a href="pets" data-navigo>Pets</a></li>
+                        <li><a href="romantic" data-navigo>Romantic</a></li>
+                        <li><a href="sport" data-navigo>Sport</a></li>
+                        <li><a href="toys" data-navigo>Toys</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="arrow open-next-level" data-menu-level="sale-menu">Sale</span>
+                    <ul class="hidden" id="sale-menu">
+                        <li><a href="accessories" data-navigo>Accessories</a></li>
+                        <li><a href="alcohol" data-navigo>Alcohol</a></li>
+                        <li><a href="art" data-navigo>Art</a></li>
+                        <li><a href="books" data-navigo>Books</a></li>
+                        <li><a href="drink" data-navigo>Drink</a></li>
+                        <li><a href="electronics" data-navigo>Electronics</a></li>
+                        <li><a href="flowers" data-navigo>Flowers & Plants</a></li>
+                        <li><a href="food" data-navigo>Food</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="arrow">Company</h2>
+        </li>
+        <li>
+            <h2 class="arrow">Library</h2>
+        </li>
+        <li>
+            <h2 class="arrow">Contact us</h2>
+        </li>
+    </ul>
 </div>
 <div id="login-modal" class="modal-container">
     <div class="overlay" data-modal="close"></div>

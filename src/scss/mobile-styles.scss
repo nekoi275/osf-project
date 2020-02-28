@@ -1,8 +1,7 @@
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .logo {
     display: flex;
     margin: auto;
-    width: 65px;
     .logo-text {
       &.hidden {
         display: none;
@@ -68,6 +67,11 @@
   }
   nav {
     margin: 0px;
+    ul {
+      li {
+        padding: 7px 7px 27px 7px;
+      }
+    }
   }
   .products-container {
     justify-content: space-around;

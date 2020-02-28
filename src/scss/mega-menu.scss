@@ -1,6 +1,7 @@
 @use "variables" as *;
 
-#mega-menu {
+#mega-menu,
+#mega-menu-mobile {
   @include dropdown;
   box-sizing: border-box;
   padding: 55px 0px 55px 0px;
@@ -10,8 +11,46 @@
   a {
     color: #ffffff;
     padding-bottom: 15px;
+    cursor: pointer;
   }
   h2 {
     color: $light-font-color;
+  }
+}
+
+#mega-menu-mobile {
+  padding: 15px;
+  ul {
+    li {
+      display: block;
+      h2 {
+        color: #ffffff;
+      }
+    }
+  }
+  .arrow::after {
+    float: right;
+  }
+  .arrow.arrow-open::after {
+    content: "\25b2";
+  }
+  .open-next-level {
+    display: block;
+    width: 100%;
+  }
+  span.open-next-level {
+    padding: 0px 0px 10px 10px;
+  }
+  #product-categories, #sale-menu {
+    padding: 0px 0px 10px 30px;
+  }
+}
+
+[data-mobile-menu] {
+  &.active {
+    display: block;
+  }
+  &.not-shown {
+    display: none;
   }
 }

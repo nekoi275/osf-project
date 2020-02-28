@@ -30,12 +30,18 @@ function initCommonHandlers() {
     $('#cookies-accept-button').click(() => {
         localStorage.setItem('isCookiesAccepted', true);
     });
+    $('[data-mobile-menu]').click(event => {
+        functions.toggleMobileMenu(event);
+    });
+    $('.open-next-level').click(event => {
+        functions.showMenuNextLevel(event);
+    })
 };
 
 function initProductHandlers() {
     $('.gallery-small-image').click(functions.changeGalleryImage);
     $('#gallery-enlarge-button').click(functions.enlargeGalleryImage);
-    $('[data-tab]').click((event) => {
+    $('[data-tab]').click(event => {
         functions.changeTab(event);
     });
     $('.quantity-value').change(event => {
@@ -54,7 +60,7 @@ function initProductHandlers() {
 };
 
 function initProductTileHandlers() {
-    $('.product-tile-hover-button').click((event) => {
+    $('.product-tile-hover-button').click(event => {
         functions.increaseCount(event);
     });
     $('.product-tile-button').click(event => {
