@@ -85,6 +85,11 @@
       }
     }
   }
+  #login-modal {
+    .modal {
+      width: 100%;
+    }
+  }
 }
 
 @media (max-width: 1199px) {
@@ -104,6 +109,11 @@
   }
   .show-1200 {
     display: none;
+  }
+  #cookies-message {
+    .modal {
+      width: 100%;
+    }
   }
 }
 
