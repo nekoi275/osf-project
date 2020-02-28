@@ -17,11 +17,6 @@ export default {
         $('[data-mobile-menu]').removeClass('not-shown');
         $(event.target).addClass('not-shown');
     },
-    showMenuNextLevel: function (event) {
-        let menuTarget = $(event.target).data('menu-level');
-        $('#' + menuTarget).toggleClass('hidden');
-        $(event.target).toggleClass('arrow-open');
-    },
     hideAllMenu: () => {
         $('.dropdown').removeClass('active');
         $('.dropdown-button').removeClass('active');

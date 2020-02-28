@@ -7,7 +7,7 @@ let product = require('../../templates/product.ejs');
 let benefits = require('../../templates/benefits.ejs');
 let popular = require('../../templates/popular.ejs');
 
-function fitMaxLength(elem, extraTextElem) {
+function fitMaxLength(elem) {
     let maxLength = $(elem).attr('data-maxlength');
     let fullText = $(elem).text();
     let extraText = fullText.substring(maxLength);
@@ -15,7 +15,7 @@ function fitMaxLength(elem, extraTextElem) {
     if (fullText.length > maxLength) {
         $(elem).text(fullText.substring(0, maxLength));
     }
-    $(extraTextElem).text(extraText);
+    $(elem).next().text(extraText);
 }
 
 function initProductPage(onLoad) {
@@ -34,7 +34,7 @@ function initProductPage(onLoad) {
     initCommonHandlers();
     initProductHandlers();
     $('#popular').addClass('product-page-section');
-    fitMaxLength($('p[data-maxlength]'), $('#product-desc-text-rest'));
+    fitMaxLength($('p[data-maxlength]'));
 }
 
 export { initProductPage };

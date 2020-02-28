@@ -34,7 +34,8 @@ function initCommonHandlers() {
         functions.toggleMobileMenu(event);
     });
     $('.open-next-level').click(event => {
-        functions.showMenuNextLevel(event);
+        $(event.target).next().toggleClass('hidden');
+        $(event.target).toggleClass('arrow-open');
     })
 };
 
