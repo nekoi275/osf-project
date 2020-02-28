@@ -1,3 +1,5 @@
+import { initProductTileHandlers } from './handlers';
+
 let productsTemplates = {
     button: require('../templates/tiles/product-button.ejs'),
     hover: require('../templates/tiles/product-hover.ejs')
@@ -15,9 +17,13 @@ function getProductTiles(link, onLoad) {
     })
 };
 
-function addProductTiles(productTiles, handlersFunction) {
-    $('.products-container').append(productTiles);
-    handlersFunction();
+function addProductTiles(productTiles, elem, isAppend) {
+    if (isAppend) {
+        $(elem).append(productTiles)
+    } else {
+        $(elem).html(productTiles)
+    }
+    initProductTileHandlers();
 };
 
 export { getProductTiles, addProductTiles };

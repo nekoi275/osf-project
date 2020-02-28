@@ -1,11 +1,11 @@
 import $ from 'jquery';
-import { initCommonHandlers, initProductHandlers, initProductTileHandlers } from './handlers';
-import { getProductTiles } from './productTile';
+import { initCommonHandlers, initProductHandlers, initProductTileHandlers } from '../handlers';
+import { getProductTiles } from '../productTile';
+import helpers from '../helpers'
 
-let product = require('../templates/product.ejs');
-let main = require('../templates/main.ejs');
-let benefits = require('../templates/benefits.ejs');
-let popular = require('../templates/popular.ejs');
+let product = require('../../templates/product.ejs');
+let benefits = require('../../templates/benefits.ejs');
+let popular = require('../../templates/popular.ejs');
 
 function fitMaxLength(elem, extraTextElem) {
     let maxLength = $(elem).attr('data-maxlength');
@@ -18,7 +18,7 @@ function fitMaxLength(elem, extraTextElem) {
     $(extraTextElem).text(extraText);
 }
 
-function initProductPage(afterInit) {
+function initProductPage(onLoad) {
     let productPage = [product({
         previousPage: 'OSF Theme',
         previousPageUrl: 'osf-theme',
@@ -26,16 +26,11 @@ function initProductPage(afterInit) {
         firstPage: 'Home',
         currentPage: 'Ruffle Front V-Neck Cardigan'
     }), popular(), benefits()].join('');
-    $(document.body).html(main({
-        content: productPage, 
-        year: new Date().getFullYear(), 
-        wishlistCount: localStorage.getItem('wishlist') || 0,
-        cartCount: localStorage.getItem('cart') || 0
-    }));
+    helpers.showPage(productPage);
     getProductTiles('api/popular-products.json', productTiles => {
         $('.products-container').html(productTiles);
         initProductTileHandlers();
-        afterInit();
+        onLoad();
     });
     initCommonHandlers();
     initProductHandlers();
