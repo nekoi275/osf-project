@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import { initCommonHandlers, initProductHandlers, initProductTileHandlers } from '../handlers';
-import { getProductTiles } from '../productTile';
+import { initCommonHandlers, initProductHandlers } from '../handlers';
+import { getProductTiles, addProductTiles } from '../productTile';
 import helpers from '../helpers'
 
 let product = require('../../templates/product.ejs');
@@ -28,8 +28,7 @@ function initProductPage(onLoad) {
     }), popular(), benefits()].join('');
     helpers.showPage(productPage);
     getProductTiles('api/popular-products.json', productTiles => {
-        $('.products-container').html(productTiles);
-        initProductTileHandlers();
+        addProductTiles(productTiles, $('.products-container'), false);
         onLoad();
     });
     initCommonHandlers();

@@ -18,7 +18,6 @@ header {
 
 .logo {
   margin-left: 55px;
-  width: 147px;
   display: inline-block;
   img {
     display: inline-block;
@@ -52,7 +51,6 @@ nav {
       display: inline;
       padding: 10px 10px 27px 10px;
       box-sizing: border-box;
-      margin-left: 15px;
       color: $dark-font-color;
       font-weight: 400;
       text-transform: uppercase;
@@ -71,7 +69,6 @@ nav {
     }
     .lang {
       color: $light-font-color;
-      margin-left: 20px;
     }
   }
   .fas,

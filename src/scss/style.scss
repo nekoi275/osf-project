@@ -1,9 +1,9 @@
 @use "fonts";
 @use "../../node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/main" with (
-    $xs-max: 20rem,
-    $sm-max: 48rem,
-    $md-max: 73rem,
-    $lg-max: 120rem
+    $xs-max: 320px,
+    $sm-max: 767px,
+    $md-max: 1200px,
+    $lg-max: 1900px
 );
 @use "../../node_modules/slick-carousel/slick/slick";
 @use "../../node_modules/slick-carousel/slick/slick-theme" with (

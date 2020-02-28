@@ -18,12 +18,14 @@
             <li class="lang arrow dropdown-button" data-toggle="lang-dropdown">EN</li>
             <li class="lang arrow dropdown-button" data-toggle="currency-dropdown">$ US</li>
         </ul>
-        <span class="fas fa-search"></span>
-        <span class="far fa-user" data-modal="open" data-modal-id="login-modal"></span>
-        <span class="far fa-heart"></span>
-        <span class="fas fa-shopping-bag"></span>
-        <span class="count wishlist" id="wishlist-counter"><%= wishlistCount %></span>
-        <span class="count products" id="cart-counter"><%= cartCount %></span>
+        <div class="show-lg">
+            <span class="fas fa-search"></span>
+            <span class="far fa-user" data-modal="open" data-modal-id="login-modal"></span>
+            <span class="far fa-heart"></span>
+            <span class="fas fa-shopping-bag"></span>
+            <span class="count wishlist" id="wishlist-counter"><%= wishlistCount %></span>
+            <span class="count products" id="cart-counter"><%= cartCount %></span>
+        </div>
     </nav>
 </header>
 <div id="mega-menu" class="dropdown">
@@ -127,9 +129,10 @@
             performance
             and interaction with social media offering publicity tailored to your interests. If you continue browsing,
             we consider that you accept its use.
-            You can expand this information consulting our <a href="cookies-policy" data-navigo>Cookies Policy Page.</a></p>
-            <button id="cookies-accept-button" data-modal="close">Accept</button>
-        </div>
+            You can expand this information consulting our <a href="cookies-policy" data-navigo>Cookies Policy Page.</a>
+        </p>
+        <button id="cookies-accept-button" data-modal="close">Accept</button>
+    </div>
 </div>
 <main></main>
 <footer>
