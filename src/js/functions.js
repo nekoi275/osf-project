@@ -9,7 +9,7 @@ export default {
     },
     toggleMobileMenu: function (event) {
         let action = $(event.target).data('mobile-menu');
-        if(action == 'open') {
+        if (action == 'open') {
             $('#mega-menu-mobile').addClass('active');
         } else {
             $('#mega-menu-mobile').removeClass('active');
@@ -77,14 +77,17 @@ export default {
         currentTab.addClass('active');
     },
     increaseCount: (event, number) => {
-        let countTarget = $('#' + $(event.target).data('count') + '-counter');
-        let count = Number($(countTarget).text());
+        let counterName = $(event.target).data('count');
+        let countTarget = $('.' + counterName + '-counter');
+        let count = Number(localStorage.getItem(counterName)) || 0;
+        let result;
         if (number) {
-            $(countTarget).text(count + number);
+            result = count + number;
         } else {
-            $(countTarget).text(++count);
+            result = ++count;
         }
-        localStorage.setItem($(event.target).data('count'), $(countTarget).text());
+        $(countTarget).each(function () { $(this).text(result) });
+        localStorage.setItem(counterName, result);
     },
     validateNumbers: event => {
         let numberVal = Number.isInteger(Number($(event.target).val()));
@@ -96,9 +99,9 @@ export default {
         let action = $(event.target).data('input');
         let count = $('.quantity-value').val();
         if (action == 'increase') {
-            $('.quantity-value').val(++ count);
+            $('.quantity-value').val(++count);
         } else {
-            $('.quantity-value').val(-- count);
+            $('.quantity-value').val(--count);
         }
     }
 }

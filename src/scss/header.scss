@@ -79,7 +79,6 @@ nav {
   .count {
     position: absolute;
     background-color: #ffffff;
-    top: 23px;
     width: 10px;
     height: 10px;
     text-align: center;
@@ -88,12 +87,6 @@ nav {
     border-radius: 100px;
     font-size: 10px;
     padding: 1px;
-  }
-  .count.wishlist {
-    right: 102px;
-  }
-  .count.products {
-    right: 46px;
   }
 }
 

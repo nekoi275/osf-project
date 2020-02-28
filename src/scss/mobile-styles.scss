@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 @media (max-width: 768px) {
   .logo {
     display: flex;
@@ -81,6 +83,12 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .hide-1200 {
+    display: none;
+  }
+}
+
 .hidden {
   display: none;
 }
@@ -101,5 +109,20 @@ footer.mobile {
   }
   .arrow::after {
     float: right;
+  }
+}
+
+nav.hide-1200 {
+  position: relative;
+  background-color: $base-color;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  .fas,.far {
+    color: $light-font-color;
+    position: relative;
+  }
+  .count {
+    background-color: transparent;
   }
 }
