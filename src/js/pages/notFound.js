@@ -1,4 +1,5 @@
 import helpers from '../helpers'
+import { initCommonHandlers } from '../handlers';
 
 let page404 = require('../../templates/404.ejs');
 
@@ -9,6 +10,7 @@ function notFoundHandler(onLoad) {
         previousPage: 'Home',
     }));
     onLoad();
+    initCommonHandlers();
 }
 
 export { notFoundHandler };
