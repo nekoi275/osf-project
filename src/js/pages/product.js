@@ -1,7 +1,8 @@
 import $ from 'jquery';
 import { initCommonHandlers, initProductHandlers } from '../handlers';
 import { getProductTiles, addProductTiles } from '../productTile';
-import helpers from '../helpers'
+import helpers from '../helpers';
+import { initProductGallerySlider } from '../sliders';
 
 let product = require('../../templates/product.ejs');
 let benefits = require('../../templates/benefits.ejs');
@@ -33,6 +34,7 @@ function initProductPage(onLoad) {
     });
     initCommonHandlers();
     initProductHandlers();
+    initProductGallerySlider();
     $('#popular').addClass('product-page-section');
     fitMaxLength($('p[data-maxlength]'));
 }

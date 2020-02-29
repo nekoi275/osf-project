@@ -34,4 +34,23 @@ function initPopularProductsSlider() {
     });
 };
 
-export { initTopSlider, initFeaturedSlider, initPopularProductsSlider };
+function initProductGallerySlider() {
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        asNavFor: '.slider-nav'
+      });
+      $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        arrows: false,
+        dots: true,
+        centerMode: true,
+        centerPadding: 30,
+        focusOnSelect: true
+      });
+}
+
+export { initTopSlider, initFeaturedSlider, initPopularProductsSlider, initProductGallerySlider };

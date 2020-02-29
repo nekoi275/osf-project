@@ -57,6 +57,26 @@
       transform: translateX(-50%) translateY(-50%);
     }
   }
+  &.hidden {
+    display: none;
+  }
+}
+
+#product-gallery-slider {
+  .slider-nav {
+    margin-top: 30px;
+  }
+  .slick-slide {
+    margin-left: 10px;
+  }
+  .slick-dots li.slick-active button::before {
+    border: 3px solid #000000;
+    color: transparent;
+  }
+  
+  .slick-dots li button::before {
+    color: $dark-font-color;
+  }
 }
 
 .product-desc {

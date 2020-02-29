@@ -4,6 +4,7 @@ const path = require('path');
 const clean = require('gulp-clean');
 const webpack = require('webpack-stream');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const isProduction = (require('yargs').argv.prod == undefined) ? false : true;
 sass.compiler = require('sass');
 
 const output = path.resolve(__dirname, 'dist');
@@ -15,7 +16,7 @@ const webpackConfig = {
     output: {
         filename: 'main.js',
     },
-    mode: 'development',
+    mode: isProduction ? 'production' : 'development',
     plugins: [
         new HtmlWebpackPlugin(htmlConfig)
     ],
