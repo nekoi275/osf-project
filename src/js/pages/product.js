@@ -33,7 +33,7 @@ function initProductPage(onLoad) {
             addProductTiles(productTiles, $('#popular-products-slider'), false);
             initPopularProductsSlider();
         } else {
-            addProductTiles(productTiles, $('.products-container'), true);
+            addProductTiles(productTiles, $('.products-container'), false);
         }
         onLoad();
     });

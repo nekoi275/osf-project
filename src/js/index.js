@@ -33,6 +33,7 @@ function switchToMobile() {
 
 function onLoad() {
     router.updatePageLinks(); 
+    switchToMobile();
 }
 
 router.on({
