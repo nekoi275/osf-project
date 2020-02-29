@@ -38,6 +38,18 @@
       }
     }
   }
+  #not-found {
+    .not-found-message {
+      padding: 10px;
+      .col.center-align {
+        > span {
+          font-size: 50px;
+          display: block;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
   #banner {
     height: 185px;
     background-position: right;
@@ -89,6 +101,9 @@
     .modal {
       width: 100%;
     }
+  }
+  #product-details {
+    padding-bottom: 30px;
   }
 }
 

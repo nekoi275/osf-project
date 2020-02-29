@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { initCommonHandlers, initProductHandlers } from '../handlers';
 import { getProductTiles, addProductTiles } from '../productTile';
 import helpers from '../helpers';
-import { initProductGallerySlider } from '../sliders';
+import { initProductGallerySlider, initPopularProductsSlider } from '../sliders';
 
 let product = require('../../templates/product.ejs');
 let benefits = require('../../templates/benefits.ejs');
@@ -29,7 +29,12 @@ function initProductPage(onLoad) {
     }), popular(), benefits()].join('');
     helpers.showPage(productPage);
     getProductTiles('api/popular-products.json', productTiles => {
-        addProductTiles(productTiles, $('.products-container'), false);
+        if (helpers.isMobile()) {
+            addProductTiles(productTiles, $('#popular-products-slider'), false);
+            initPopularProductsSlider();
+        } else {
+            addProductTiles(productTiles, $('.products-container'), true);
+        }
         onLoad();
     });
     initCommonHandlers();

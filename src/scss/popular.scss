@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     color: #ffffff;
-  
+
     &::after,
     &::before {
       content: "";
@@ -29,6 +29,14 @@
     }
     #load-more-button {
       display: none;
+    }
+    .slick-dots li.slick-active button::before {
+      border: 3px solid #000000;
+      color: transparent;
+    }
+
+    .slick-dots li button::before {
+      color: $dark-font-color;
     }
   }
 }
